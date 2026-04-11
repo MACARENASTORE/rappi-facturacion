@@ -1,43 +1,60 @@
 const alegra = require('./alegra');
 
-async function buscarProducto(referencia) {
+function limpiarSKU(sku) {
+  if (!sku) return '';
+  return sku.replace('macarenastore_', '').trim();
+}
+
+async function buscarProductoPorReferencia(ref) {
   try {
-    const response = await alegra.get('/items', {
-      params: { reference: referencia }
+    const res = await alegra.get('/items', {
+      params: { query: ref }
     });
 
-    if (response.data.length > 0) {
-      return response.data[0].id;
-    }
-
+    return res.data.find(p => String(p.reference) === String(ref));
+  } catch {
     return null;
+  }
+}
+
+async function crearProducto(item) {
+
+  const referencia = limpiarSKU(item.sku);
+
+  const existente = await buscarProductoPorReferencia(referencia);
+
+  if (existente) {
+    console.log(`📦 ${referencia} → ✅`);
+    return existente.id;
+  }
+
+  try {
+    const response = await alegra.post('/items', {
+      name: item.producto,
+      reference: referencia,
+      price: item.precio,
+      description: item.producto,
+
+      // 🔥 NUEVO (CLAVE DIAN)
+      unit: "unit", // 👈 unidad estándar
+
+      tax: [
+        {
+          id: 1
+        }
+      ],
+
+      priceIncludesTax: true
+    });
+
+    console.log(`📦 ${referencia} → 🆕`);
+
+    return response.data.id;
 
   } catch (error) {
-    console.log("❌ Error buscando producto:", referencia);
+    console.log(`❌ Producto ${referencia}:`, error.response?.data || error.message);
     return null;
   }
 }
 
-async function construirItems(items) {
-  let resultado = [];
-
-  for (const i of items) {
-
-    const productoId = await buscarProducto(i.sku);
-
-    if (!productoId) {
-      console.log("⚠️ Producto no encontrado:", i.sku);
-      continue;
-    }
-
-    resultado.push({
-      id: productoId,
-      price: i.precio,
-      quantity: i.cantidad
-    });
-  }
-
-  return resultado;
-}
-
-module.exports = { construirItems };
+module.exports = { crearProducto };
