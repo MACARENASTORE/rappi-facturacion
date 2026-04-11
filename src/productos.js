@@ -29,30 +29,22 @@ async function crearProducto(item) {
   }
 
   try {
-    const response = await alegra.post('/items', {
+    const res = await alegra.post('/items', {
       name: item.producto,
       reference: referencia,
       price: item.precio,
-      description: item.producto,
 
-      // 🔥 NUEVO (CLAVE DIAN)
-      unit: "unit", // 👈 unidad estándar
+      unit: "Unidad", // 🔥 SOLUCIÓN CLAVE
 
-      tax: [
-        {
-          id: 1
-        }
-      ],
-
-      priceIncludesTax: true
+      tax: [{ id: 4 }]
     });
 
     console.log(`📦 ${referencia} → 🆕`);
 
-    return response.data.id;
+    return res.data.id;
 
   } catch (error) {
-    console.log(`❌ Producto ${referencia}:`, error.response?.data || error.message);
+    console.log(`❌ Producto ${referencia}`, error.response?.data);
     return null;
   }
 }

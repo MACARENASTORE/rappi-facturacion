@@ -1,45 +1,50 @@
 require('dotenv').config();
+
 const fs = require('fs');
 const csv = require('csv-parser');
 
 const alegra = require('./alegra');
 const { crearProducto } = require('./productos');
+const { crearCliente } = require('./clientes');
 const { yaFacturada, guardarFacturada } = require('./facturas');
 
 console.log('🔥 INICIANDO FACTURACIÓN...\n');
 
 let ordenes = {};
 
-// validar CSV
-if (!fs.existsSync('./input/rappi.csv')) {
-  console.log('❌ No existe rappi.csv en /input');
-  process.exit();
-}
-
-// leer CSV
 fs.createReadStream('./input/rappi.csv')
   .pipe(csv())
   .on('data', (row) => {
+
+    // 🔥 solo pedidos finalizados
+    if (row['Estado'] !== 'finished') return;
 
     const orderId = row['ID de la orden'];
 
     if (!ordenes[orderId]) {
       ordenes[orderId] = {
         cliente: {
-          documento: row['Documento'] || '222222222221'
+          documento: row['Documento'] || '222222222221',
+          nombre: row['Usuario']
         },
-        items: []
+        items: [],
+        totalRappi: Number(row['Pago total al aliado']) || 0
       };
     }
 
+    const cantidad = Number(row['Unidades']) || 1;
+    const totalLinea = Number(row['Precio con descuento']) || 0;
+    const precioUnitario = totalLinea / cantidad;
+
     ordenes[orderId].items.push({
       producto: row['Producto'],
-      cantidad: Number(row['Unidades']) || 1,
-      precio: Number(row['Precio unitario']) || 0,
+      cantidad,
+      precio: precioUnitario,
       sku: row['SKU']
     });
 
   })
+
   .on('end', async () => {
 
     for (const orderId in ordenes) {
@@ -52,34 +57,49 @@ fs.createReadStream('./input/rappi.csv')
       console.log(`🧾 Procesando orden: ${orderId}`);
 
       const orden = ordenes[orderId];
-      const clienteId = 5;
+
+      // 👤 cliente
+      const clienteId = await crearCliente(orden.cliente);
 
       const itemsAlegra = [];
 
-      // 🔥 productos
       for (const item of orden.items) {
 
         const productoId = await crearProducto(item);
 
-        if (productoId) {
-          itemsAlegra.push({
-            id: productoId,
-            price: item.precio,
-            quantity: item.cantidad,
-
-            // 🔥 asegurar IVA en factura
-            tax: [
-              {
-                id: 1
-              }
-            ]
-          });
+        if (!productoId) {
+          console.log(`❌ Producto inválido, se omite`);
+          continue;
         }
+
+        // 💰 precio sin IVA
+        const precioSinIVA = item.precio / 1.19;
+
+        itemsAlegra.push({
+          id: productoId,
+          price: Number(precioSinIVA.toFixed(2)),
+          quantity: item.cantidad,
+          tax: [{ id: 4 }]
+        });
+
+        console.log(`📦 ${item.sku} → ✅`);
       }
 
-      if (itemsAlegra.length === 0) {
-        console.log(`❌ Orden ${orderId} sin productos válidos`);
-        continue;
+      if (itemsAlegra.length === 0) continue;
+
+      // 🔥 ajuste para cuadrar total exacto
+      const totalCalculado = itemsAlegra.reduce((acc, item) => {
+        return acc + (item.price * item.quantity * 1.19);
+      }, 0);
+
+      const diferencia = orden.totalRappi - totalCalculado;
+
+      if (Math.abs(diferencia) > 0.01) {
+        const ultimo = itemsAlegra[itemsAlegra.length - 1];
+        const ajuste = diferencia / 1.19;
+        ultimo.price += ajuste;
+
+        console.log(`🧮 Ajuste aplicado: ${diferencia.toFixed(2)}`);
       }
 
       try {
@@ -87,12 +107,14 @@ fs.createReadStream('./input/rappi.csv')
         const hoy = new Date();
         const fecha = hoy.toISOString().split('T')[0];
 
-        const vencimiento = new Date(hoy);
-        vencimiento.setDate(hoy.getDate() + 30);
+        // 📅 vencimiento a 15 días
+        const vencimiento = new Date();
+        vencimiento.setDate(hoy.getDate() + 15);
+        const dueDate = vencimiento.toISOString().split('T')[0];
 
         const factura = {
           date: fecha,
-          dueDate: vencimiento.toISOString().split('T')[0],
+          dueDate: dueDate,
 
           client: { id: clienteId },
 
@@ -100,16 +122,16 @@ fs.createReadStream('./input/rappi.csv')
             number: orderId
           },
 
+          // 🔥 SOLUCIÓN FINAL (strings para tu cuenta)
+          paymentForm: "CREDIT",
+          paymentMethod: "CASH",
+
+          status: 'draft',
+
           items: itemsAlegra,
 
-          // 🔥 TEXTO LEGAL
-          observations: `Pedido Rappi ${orderId}
-
-Factura correspondiente a ventas realizadas a través de la plataforma Rappi. El recaudo es efectuado por el intermediario conforme a sus condiciones comerciales.`,
-
-          paymentForm: 'CASH',
-
-          status: 'open'
+          termsConditions:
+            `Factura correspondiente a la orden Rappi No. ${orderId}. El recaudo es efectuado por el intermediario conforme a sus condiciones comerciales.`
         };
 
         await alegra.post('/invoices', factura);

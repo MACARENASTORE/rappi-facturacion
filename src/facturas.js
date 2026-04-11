@@ -2,32 +2,19 @@ const fs = require('fs');
 
 const path = './data/facturadas.json';
 
-// Obtener lista
 function obtenerFacturadas() {
-  if (!fs.existsSync(path)) {
-    return [];
-  }
-
-  const data = fs.readFileSync(path);
-  return JSON.parse(data);
+  if (!fs.existsSync(path)) return [];
+  return JSON.parse(fs.readFileSync(path));
 }
 
-// Verificar si ya fue facturada
-function yaFacturada(orderId) {
-  const facturadas = obtenerFacturadas();
-  return facturadas.includes(orderId);
+function yaFacturada(id) {
+  return obtenerFacturadas().includes(id);
 }
 
-// Guardar orden facturada
-function guardarFacturada(orderId) {
-  const facturadas = obtenerFacturadas();
-
-  facturadas.push(orderId);
-
-  fs.writeFileSync(path, JSON.stringify(facturadas, null, 2));
+function guardarFacturada(id) {
+  const data = obtenerFacturadas();
+  data.push(id);
+  fs.writeFileSync(path, JSON.stringify(data, null, 2));
 }
 
-module.exports = {
-  yaFacturada,
-  guardarFacturada
-};
+module.exports = { yaFacturada, guardarFacturada };
