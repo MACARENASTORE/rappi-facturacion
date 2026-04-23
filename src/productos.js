@@ -19,11 +19,10 @@ async function buscarProductoPorReferencia(ref) {
   }
 }
 
-// 🔧 CORREGIR PRODUCTO (unidad + IVA)
+// 🔧 CORREGIR PRODUCTO (solo IVA)
 async function actualizarProducto(producto) {
   try {
     await alegra.put(`/items/${producto.id}`, {
-      unit: { id: 1 }, // 🔥 Unidad válida
       tax: [{ id: 4 }] // 🔥 IVA 19%
     });
 
@@ -45,7 +44,6 @@ async function crearProducto(item) {
   if (producto) {
 
     const necesitaFix =
-      !producto.unit ||
       !producto.tax ||
       producto.tax.length === 0;
 
@@ -67,8 +65,8 @@ async function crearProducto(item) {
       reference: referencia,
       price: item.precio,
 
-      unit: { id: 1 }, // 🔥 CLAVE SOLUCION
-      tax: [{ id: 4 }] // 🔥 IVA
+      // ❌ SIN UNIT (SOLUCIÓN REAL)
+      tax: [{ id: 4 }]
     });
 
     console.log(`📦 ${referencia} → 🆕`);
@@ -76,8 +74,27 @@ async function crearProducto(item) {
     return res.data.id;
 
   } catch (error) {
-    console.log(`❌ Producto ${referencia}`, error.response?.data);
-    return null;
+
+    console.log(`⚠️ Intentando recrear producto limpio → ${referencia}`);
+
+    // 🔥 SEGUNDO INTENTO
+    try {
+      const res = await alegra.post('/items', {
+        name: item.producto,
+        reference: referencia + "_fix",
+        price: item.precio,
+
+        tax: [{ id: 4 }]
+      });
+
+      console.log(`📦 ${referencia} → 🆕 (recreado)`);
+
+      return res.data.id;
+
+    } catch (e) {
+      console.log(`❌ Producto ${referencia}`, e.response?.data);
+      return null;
+    }
   }
 }
 
