@@ -131,7 +131,8 @@ fs.createReadStream('./input/rappi.csv')
           items: itemsAlegra,
 
           termsConditions:
-            `Factura correspondiente a la orden Rappi No. ${orderId}. El recaudo es efectuado por el intermediario conforme a sus condiciones comerciales.`
+            `Este documento se asimila en todos sus efectos a una letra de cambio de conformidad con el Art. 774 del código de comercio. Autorizo que en caso de incumplimiento de esta obligación sea reportado a las centrales de riesgo, se cobraran intereses por mora.
+            Factura correspondiente a la orden Rappi No. ${orderId}. El recaudo es efectuado por el intermediario conforme a sus condiciones comerciales.`
         };
 
         await alegra.post('/invoices', factura);
