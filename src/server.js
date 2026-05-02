@@ -1,100 +1,57 @@
+require('dotenv').config();
+
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const { exec } = require('child_process');
-const fs = require('fs');
-const csv = require('csv-parser');
+const { createDashboardController } = require('./controllers/dashboardController');
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
+const defaultCsvPath = path.join(__dirname, '../input/rappi.csv');
+const dashboardController = createDashboardController({ csvPath: defaultCsvPath });
+let procesando = false;
 
 app.use(express.static('public'));
 
-// 🏠 HOME
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-// 📤 SUBIR CSV
-app.post('/upload', upload.single('file'), (req, res) => {
-  const rutaDestino = path.join(__dirname, '../input/rappi.csv');
+app.get('/api/alegra/invoices', dashboardController.getAlegraInvoices);
+app.post('/api/upload-csv', upload.single('file'), dashboardController.uploadCsv);
+app.get('/api/csv/dashboard', dashboardController.getCsvDashboard);
 
-  if (fs.existsSync(rutaDestino)) {
-    fs.unlinkSync(rutaDestino);
+app.get('/dashboard', dashboardController.getCsvDashboard);
+app.post('/upload', upload.single('file'), dashboardController.legacyUpload);
+
+app.post('/procesar', (req, res) => {
+  const token = process.env.PANEL_TOKEN;
+
+  if (!token) {
+    return res.status(500).json({
+      resultado: 'Configura PANEL_TOKEN en .env antes de procesar facturas.'
+    });
   }
 
-  fs.renameSync(req.file.path, rutaDestino);
-  res.redirect('/?upload=ok');
-});
+  if (req.get('x-panel-token') !== token) {
+    return res.status(401).json({ resultado: 'Token invalido.' });
+  }
 
-// ▶️ PROCESAR
-app.get('/procesar', (req, res) => {
+  if (procesando) {
+    return res.status(409).json({ resultado: 'Ya hay un proceso de facturacion en curso.' });
+  }
+
+  procesando = true;
+
   exec('node src/index.js', (error, stdout, stderr) => {
-    if (error) return res.json({ resultado: stderr });
+    procesando = false;
+
+    if (error) return res.status(500).json({ resultado: stderr || stdout || error.message });
     res.json({ resultado: stdout });
   });
 });
 
-// 📊 DASHBOARD REAL CORRECTO
-app.get('/dashboard', (req, res) => {
-
-  let fechas = [];
-  let data = [];
-
-  fs.createReadStream('./input/rappi.csv')
-    .pipe(csv())
-    .on('data', (row) => {
-
-      const fecha = new Date(row['Fecha de creación']);
-
-      if (!isNaN(fecha)) {
-        fechas.push(fecha);
-        data.push(row);
-      }
-
-    })
-    .on('end', () => {
-
-      const ultimaFecha = new Date(Math.max(...fechas));
-      const dia = ultimaFecha.toISOString().split('T')[0];
-
-      let total = 0;
-      const ordenes = new Set();
-
-      data.forEach(row => {
-
-        const fecha = new Date(row['Fecha de creación']);
-        const fechaFila = fecha.toISOString().split('T')[0];
-
-        if (fechaFila !== dia) return;
-
-        const ordenId = row['ID de la orden'];
-
-        let precio = row['Precio con descuento'];
-
-        if (precio) {
-          precio = precio
-            .toString()
-            .replace(/\$/g, '')
-            .replace(/\./g, '')
-            .replace(/,/g, '');
-        }
-
-        ordenes.add(ordenId);
-        total += Number(precio) || 0;
-
-      });
-
-      res.json({
-        ordenes: ordenes.size,
-        ventas: total,
-        fecha: dia
-      });
-
-    });
-
-});
-
 app.listen(3000, () => {
-  console.log('🚀 Panel en http://localhost:3000');
+  console.log('Panel en http://localhost:3000');
 });

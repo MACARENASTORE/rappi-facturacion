@@ -7,10 +7,35 @@ const alegra = require('./alegra');
 const { crearProducto } = require('./productos');
 const { crearCliente } = require('./clientes');
 const { yaFacturada, guardarFacturada } = require('./facturas');
+const { parseMoney } = require('./utils');
 
 console.log('🔥 INICIANDO FACTURACIÓN...\n');
 
 let ordenes = {};
+const lockPath = './data/procesando.lock';
+
+function liberarBloqueo() {
+  if (fs.existsSync(lockPath)) {
+    fs.unlinkSync(lockPath);
+  }
+}
+
+try {
+  fs.openSync(lockPath, 'wx');
+} catch (error) {
+  console.error('Ya hay un proceso de facturacion en curso. Intenta de nuevo cuando termine.');
+  process.exit(1);
+}
+
+process.on('exit', liberarBloqueo);
+process.on('SIGINT', () => {
+  liberarBloqueo();
+  process.exit(130);
+});
+process.on('SIGTERM', () => {
+  liberarBloqueo();
+  process.exit(143);
+});
 
 fs.createReadStream('./input/rappi.csv')
   .pipe(csv())
@@ -28,12 +53,12 @@ fs.createReadStream('./input/rappi.csv')
           nombre: row['Usuario']
         },
         items: [],
-        totalRappi: Number(row['Pago total al aliado']) || 0
+        totalRappi: parseMoney(row['Pago total al aliado'])
       };
     }
 
     const cantidad = Number(row['Unidades']) || 1;
-    const totalLinea = Number(row['Precio con descuento']) || 0;
+    const totalLinea = parseMoney(row['Precio con descuento']);
     const precioUnitario = totalLinea / cantidad;
 
     ordenes[orderId].items.push({
@@ -43,6 +68,12 @@ fs.createReadStream('./input/rappi.csv')
       sku: row['SKU']
     });
 
+  })
+
+  .on('error', (error) => {
+    console.error('Error leyendo el CSV:', error.message);
+    liberarBloqueo();
+    process.exit(1);
   })
 
   .on('end', async () => {
@@ -60,6 +91,11 @@ fs.createReadStream('./input/rappi.csv')
 
       // 👤 cliente
       const clienteId = await crearCliente(orden.cliente);
+
+      if (!clienteId) {
+        console.log(`Orden ${orderId} omitida: no se pudo crear o encontrar el cliente`);
+        continue;
+      }
 
       const itemsAlegra = [];
 
@@ -149,4 +185,5 @@ fs.createReadStream('./input/rappi.csv')
 
     console.log('\n✅ PROCESO COMPLETO');
 
+    liberarBloqueo();
   });

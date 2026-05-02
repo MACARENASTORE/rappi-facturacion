@@ -1,121 +1,1041 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>MacarenaStore Panel</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacarenaStore Analytics</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <style>
-    body {
-      font-family: Arial;
-      background: #f5f6fa;
-      margin: 0;
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #f9fafb;
+      --ink: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --green: #16a34a;
+      --green-soft: #dcfce7;
+      --red: #dc2626;
+      --red-soft: #fee2e2;
+      --blue: #2563eb;
+      --blue-soft: #dbeafe;
+      --amber: #d97706;
+      --shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
     }
 
-    .container {
-      padding: 30px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 248px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 22px;
+      color: #e5e7eb;
+      background: #101827;
+    }
+
+    .brand {
+      margin-bottom: 28px;
+    }
+
+    .brand strong {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 6px;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+    .nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav a {
+      display: block;
+      padding: 11px 12px;
+      color: #d1d5db;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .content {
+      min-width: 0;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 18px;
     }
 
     h1 {
-      color: #2f3640;
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .connection {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .connection.error {
+      color: var(--red);
+      background: var(--red-soft);
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, minmax(130px, 0.7fr)) auto auto;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .field,
+    .upload {
+      min-height: 42px;
+      width: 100%;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--surface);
+      box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+    }
+
+    .upload {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px;
+    }
+
+    .upload input {
+      min-width: 160px;
+      max-width: 220px;
+      font-size: 12px;
+    }
+
+    .btn {
+      min-height: 42px;
+      border: 0;
+      border-radius: 8px;
+      padding: 0 15px;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn.secondary {
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .btn.secondary:hover {
+      background: var(--surface-2);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .kpis {
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      margin-bottom: 16px;
     }
 
     .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
     }
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #273c75;
-      color: white;
-      border-radius: 5px;
+    .kpi {
+      min-height: 132px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kpi span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .kpi strong {
+      margin-top: 14px;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .kpi small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .positive {
+      color: var(--green);
+    }
+
+    .negative {
+      color: var(--red);
+    }
+
+    .main-grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.75fr);
+      align-items: start;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .panel-header h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .panel-header span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .chart-box {
+      height: 320px;
+      position: relative;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
       cursor: pointer;
     }
 
-    canvas {
-      max-width: 100%;
+    .rank-row strong {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .rank-row small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .bar {
+      height: 7px;
+      margin-top: 7px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #eef2f7;
+    }
+
+    .bar i {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 13px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--muted);
+      background: var(--surface-2);
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    tbody tr {
+      cursor: pointer;
+    }
+
+    tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--green);
+      background: var(--green-soft);
+    }
+
+    .status:not(.finished) {
+      color: var(--amber);
+      background: #fef3c7;
+    }
+
+    .result {
+      max-height: 220px;
+      overflow: auto;
+      margin: 0;
+      padding: 14px;
+      color: #dbeafe;
+      background: #101827;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      z-index: 20;
+      background: rgba(246, 247, 249, 0.72);
+      backdrop-filter: blur(2px);
+    }
+
+    .loader.active {
+      display: grid;
+    }
+
+    .spinner {
+      width: 42px;
+      height: 42px;
+      border: 4px solid #bfdbfe;
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(460px, 100%);
+      height: 100vh;
+      padding: 20px;
+      overflow: auto;
+      background: var(--surface);
+      box-shadow: -18px 0 50px rgba(17, 24, 39, 0.18);
+      transform: translateX(105%);
+      transition: transform 0.22s ease;
+      z-index: 30;
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .drawer dl {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .drawer dt {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .drawer dd {
+      margin: 4px 0 0;
+      font-weight: 800;
+    }
+
+    .help {
+      margin-top: 14px;
+      padding: 14px;
+      color: var(--muted);
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 1180px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+      }
+
+      .toolbar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .kpis {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .content {
+        padding: 14px;
+      }
+
+      .topbar,
+      .toolbar,
+      .upload {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .kpis {
+        grid-template-columns: 1fr;
+      }
+
+      th:nth-child(3),
+      td:nth-child(3),
+      th:nth-child(5),
+      td:nth-child(5),
+      th:nth-child(6),
+      td:nth-child(6) {
+        display: none;
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="loader" id="loader"><div class="spinner"></div></div>
 
-<div class="container">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <strong>MacarenaStore</strong>
+        <span>Business analytics</span>
+      </div>
+      <nav class="nav">
+        <a class="active" href="#dashboard">Dashboard</a>
+        <a href="#products">Productos</a>
+        <a href="#orders">Ordenes</a>
+        <a href="#profit">Utilidad</a>
+      </nav>
+      <div class="help">
+        <strong>Como usarlo</strong><br>
+        Carga Alegra para ver utilidad real con costos. Usa CSV para revisar ventas Rappi manuales. Los filtros y el buscador aplican a ordenes, clientes y productos.
+      </div>
+    </aside>
 
-  <h1>🚀 MacarenaStore Panel</h1>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <h1>Ventas y utilidad</h1>
+          <p class="subtitle" id="subtitle">Cargando datos...</p>
+        </div>
+        <span id="connection" class="connection">CSV</span>
+      </header>
 
-  <div class="card">
-    <h2>📤 Subir CSV</h2>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="file" required><br><br>
-      <button type="submit">Subir archivo</button>
-    </form>
+      <section class="toolbar">
+        <input id="search" class="field" placeholder="Buscar orden, cliente o producto">
+        <input id="fromDate" class="field" type="date" aria-label="Fecha inicial">
+        <input id="toDate" class="field" type="date" aria-label="Fecha final">
+        <select id="statusFilter" class="field" aria-label="Estado">
+          <option value="">Todos los estados</option>
+          <option value="finished">finished</option>
+          <option value="open">open</option>
+          <option value="draft">draft</option>
+          <option value="void">void</option>
+          <option value="canceled_by_automation">canceladas</option>
+        </select>
+        <input id="productFilter" class="field" placeholder="Producto">
+        <input id="customerFilter" class="field" placeholder="Cliente">
+        <button class="btn secondary" type="button" onclick="loadCsv()">CSV</button>
+        <button class="btn" type="button" onclick="loadAlegra()">Alegra</button>
+      </section>
+
+      <section class="toolbar" style="grid-template-columns: minmax(280px, 1fr) auto auto auto;">
+        <form id="csvForm" class="upload" enctype="multipart/form-data">
+          <input id="csvFile" type="file" name="file" accept=".csv" required>
+          <button class="btn secondary" type="submit">Subir CSV</button>
+        </form>
+        <button class="btn secondary" type="button" onclick="refreshDashboard()">Actualizar</button>
+        <button class="btn secondary" type="button" onclick="exportReport()">Exportar JSON</button>
+        <button class="btn secondary" type="button" onclick="toggleHelp()">Ayuda</button>
+      </section>
+
+      <section id="helpBox" class="help hidden">
+        Primero carga datos desde Alegra o CSV. Alegra cruza facturas con productos para calcular costo y utilidad. CSV no trae costo, por eso su utilidad se muestra igual a ventas hasta que agreguemos costos por SKU.
+      </section>
+
+      <section class="grid kpis">
+        <article class="card kpi"><span>Ingresos</span><strong id="sales">$0</strong><small>Ventas totales</small></article>
+        <article class="card kpi"><span>Utilidad</span><strong id="profit" class="positive">$0</strong><small>Ganancia estimada</small></article>
+        <article class="card kpi"><span>Margen</span><strong id="margin">0%</strong><small>Utilidad / ingresos</small></article>
+        <article class="card kpi"><span>Costo</span><strong id="cost">$0</strong><small>Costo total</small></article>
+        <article class="card kpi"><span>Ordenes</span><strong id="orders">0</strong><small>Pedidos filtrados</small></article>
+        <article class="card kpi"><span>Utilidad/pedido</span><strong id="profitOrder">$0</strong><small>Promedio</small></article>
+      </section>
+
+      <section class="grid main-grid">
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Ventas vs utilidad</h2>
+            <span>Linea doble</span>
+          </div>
+          <div class="chart-box"><canvas id="salesProfitChart"></canvas></div>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Ingresos vs costos</h2>
+            <span>Distribucion</span>
+          </div>
+          <div class="chart-box"><canvas id="mixChart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="grid main-grid" style="margin-top: 16px;">
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Top productos por ganancia</h2>
+            <span>Click para detalle</span>
+          </div>
+          <div id="topProducts" class="rank-list"></div>
+        </article>
+
+        <article class="card panel">
+          <div class="panel-header">
+            <h2>Utilidad por dia</h2>
+            <span>Rentabilidad diaria</span>
+          </div>
+          <div class="chart-box"><canvas id="profitChart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="card panel" style="margin-top: 16px;">
+        <div class="panel-header">
+          <h2>Ordenes recientes</h2>
+          <span>Click para detalle</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Orden</th>
+              <th>Cliente</th>
+              <th>Estado</th>
+              <th>Ingresos</th>
+              <th>Costo</th>
+              <th>Utilidad</th>
+              <th>Margen</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTable"></tbody>
+        </table>
+      </section>
+
+      <section class="card panel" style="margin-top: 16px;">
+        <div class="panel-header">
+          <h2>Resultado</h2>
+          <span id="resultStatus"></span>
+        </div>
+        <pre id="result" class="result">Sin ejecuciones recientes.</pre>
+      </section>
+    </main>
   </div>
 
-  <div class="card">
-    <h2>🧾 Facturación</h2>
-    <button onclick="procesar()">Facturar ahora</button>
-  </div>
+  <aside id="drawer" class="drawer">
+    <button class="btn secondary" type="button" onclick="closeDrawer()">Cerrar</button>
+    <div id="drawerContent" style="margin-top: 18px;"></div>
+  </aside>
 
-  <div class="card">
-    <h2>📊 Resultado</h2>
-    <pre id="resultado"></pre>
-  </div>
-
-  <div class="card">
-    <h2>📈 Dashboard</h2>
-    <canvas id="grafica"></canvas>
-    <p id="totales"></p>
-  </div>
-
-</div>
-
-<script>
-
-let chart;
-
-function procesar() {
-  fetch('/procesar')
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById('resultado').innerText = data.resultado;
-      cargarDashboard();
+  <script>
+    const money = new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      maximumFractionDigits: 0
     });
-}
+    const number = new Intl.NumberFormat('es-CO');
 
-function cargarDashboard() {
-  fetch('/dashboard')
-    .then(res => res.json())
-    .then(data => {
+    let currentSource = 'csv';
+    let currentData = null;
+    let salesProfitChart;
+    let profitChart;
+    let mixChart;
 
-      document.getElementById('totales').innerText =
-        "Órdenes: " + data.ordenes + " | Ventas: $" + data.ventas;
+    function $(id) {
+      return document.getElementById(id);
+    }
 
-      if (chart) chart.destroy();
+    function setLoading(active) {
+      $('loader').classList.toggle('active', active);
+    }
 
-      chart = new Chart(document.getElementById('grafica'), {
-        type: 'bar',
-        data: {
-          labels: ['Ventas'],
-          datasets: [{
-            label: 'Total vendido',
-            data: [data.ventas]
-          }]
-        }
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function pct(value) {
+      return `${number.format(Number(value || 0).toFixed(1))}%`;
+    }
+
+    function selectedParams() {
+      const params = new URLSearchParams();
+      const fields = {
+        from: $('fromDate').value,
+        to: $('toDate').value,
+        status: $('statusFilter').value,
+        product: $('productFilter').value,
+        customer: $('customerFilter').value,
+        q: $('search').value
+      };
+
+      Object.entries(fields).forEach(([key, value]) => {
+        if (value) params.set(key, value);
       });
 
+      return params.toString();
+    }
+
+    function requestJson(url, options) {
+      setLoading(true);
+      return fetch(url, options)
+        .then(async res => {
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.message || data.resultado || 'Error de servidor');
+          return data;
+        })
+        .finally(() => setLoading(false));
+    }
+
+    function destroy(chart) {
+      if (chart) chart.destroy();
+    }
+
+    function renderLineChart() {
+      destroy(salesProfitChart);
+      const days = currentData.series.ventasDiarias || [];
+
+      salesProfitChart = new Chart($('salesProfitChart'), {
+        type: 'line',
+        data: {
+          labels: days.map(day => day.date.slice(5)),
+          datasets: [
+            {
+              label: 'Ingresos',
+              data: days.map(day => day.total),
+              borderColor: '#2563eb',
+              backgroundColor: 'rgba(37, 99, 235, 0.1)',
+              borderWidth: 3,
+              tension: 0.35,
+              fill: true
+            },
+            {
+              label: 'Utilidad',
+              data: days.map(day => day.profit),
+              borderColor: '#16a34a',
+              backgroundColor: 'rgba(22, 163, 74, 0.1)',
+              borderWidth: 3,
+              tension: 0.35,
+              fill: true
+            }
+          ]
+        },
+        options: chartOptions(true)
+      });
+    }
+
+    function renderProfitChart() {
+      destroy(profitChart);
+      const days = currentData.series.utilidadDiaria || [];
+
+      profitChart = new Chart($('profitChart'), {
+        type: 'bar',
+        data: {
+          labels: days.map(day => day.date.slice(5)),
+          datasets: [{
+            label: 'Utilidad',
+            data: days.map(day => day.profit),
+            backgroundColor: days.map(day => day.profit >= 0 ? '#16a34a' : '#dc2626'),
+            borderRadius: 7
+          }]
+        },
+        options: chartOptions(false)
+      });
+    }
+
+    function renderMixChart() {
+      destroy(mixChart);
+      const mix = currentData.series.ingresosVsCostos || [];
+
+      mixChart = new Chart($('mixChart'), {
+        type: 'doughnut',
+        data: {
+          labels: mix.map(item => item.name),
+          datasets: [{
+            data: mix.map(item => Math.max(item.value, 0)),
+            backgroundColor: ['#2563eb', '#dc2626', '#16a34a'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom' },
+            tooltip: { callbacks: { label: ctx => `${ctx.label}: ${money.format(ctx.raw || 0)}` } }
+          }
+        }
+      });
+    }
+
+    function chartOptions(showLegend) {
+      return {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: showLegend },
+          tooltip: { callbacks: { label: ctx => `${ctx.dataset.label || ''}: ${money.format(ctx.raw || 0)}` } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#6b7280' } },
+          y: {
+            beginAtZero: true,
+            grid: { color: '#eef2f7' },
+            ticks: { color: '#6b7280', callback: value => money.format(value) }
+          }
+        }
+      };
+    }
+
+    function rankRows(items) {
+      if (!items.length) return '<div class="help">Sin productos para estos filtros.</div>';
+      const max = Math.max(...items.map(item => Math.abs(item.profit || 0)), 1);
+
+      return items.map((item, index) => {
+        const width = Math.max(5, (Math.abs(item.profit || 0) / max) * 100);
+        const tone = item.profit >= 0 ? 'positive' : 'negative';
+
+        return `
+          <div class="rank-row" onclick="openProduct(${index})">
+            <div>
+              <strong title="${escapeHtml(item.name)}">${escapeHtml(item.name)}</strong>
+              <small>${money.format(item.sales)} ingresos | ${money.format(item.cost)} costo | ${number.format(item.units)} uds</small>
+              <div class="bar"><i style="--value:${width}%; background:${item.profit >= 0 ? '#16a34a' : '#dc2626'}"></i></div>
+            </div>
+            <strong class="${tone}">${money.format(item.profit)}</strong>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderOrders() {
+      $('ordersTable').innerHTML = (currentData.ultimasOrdenes || []).map(order => `
+        <tr onclick="openOrder('${escapeHtml(order.id)}')">
+          <td>${escapeHtml(order.id)}</td>
+          <td>${escapeHtml(order.customer)}</td>
+          <td><span class="status ${order.status === 'finished' ? 'finished' : ''}">${escapeHtml(order.status)}</span></td>
+          <td>${money.format(order.sales)}</td>
+          <td>${money.format(order.cost)}</td>
+          <td class="${order.profit >= 0 ? 'positive' : 'negative'}">${money.format(order.profit)}</td>
+          <td>${pct(order.margin)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderDashboard(data) {
+      currentData = data;
+
+      if (data.empty) {
+        $('subtitle').textContent = data.message || 'Sin datos para mostrar.';
+        $('result').textContent = data.message || 'Sin datos.';
+        return;
+      }
+
+      const summary = data.resumen;
+      $('connection').textContent = data.source === 'alegra'
+        ? (data.connection?.status === 'connected' ? 'Alegra conectado' : 'Alegra')
+        : 'CSV';
+      $('connection').classList.toggle('error', data.connection?.status === 'error');
+      $('subtitle').textContent = `Fuente ${data.source} | Datos hasta ${data.fecha}`;
+
+      $('sales').textContent = money.format(summary.ventas);
+      $('profit').textContent = money.format(summary.utilidad);
+      $('profit').className = summary.utilidad >= 0 ? 'positive' : 'negative';
+      $('margin').textContent = pct(summary.margen);
+      $('cost').textContent = money.format(summary.costo);
+      $('orders').textContent = number.format(summary.ordenes);
+      $('profitOrder').textContent = money.format(summary.utilidadPorPedido);
+
+      renderLineChart();
+      renderProfitChart();
+      renderMixChart();
+      $('topProducts').innerHTML = rankRows(data.topProductosGanancia || []);
+      renderOrders();
+      $('resultStatus').textContent = 'Listo';
+    }
+
+    function loadCsv() {
+      currentSource = 'csv';
+      const query = selectedParams();
+      $('connection').textContent = 'CSV';
+      $('connection').classList.remove('error');
+      return requestJson(`/api/csv/dashboard${query ? `?${query}` : ''}`)
+        .then(renderDashboard)
+        .catch(showError);
+    }
+
+    function loadAlegra() {
+      currentSource = 'alegra';
+      const query = selectedParams();
+      $('connection').textContent = 'Conectando Alegra';
+      $('connection').classList.remove('error');
+      return requestJson(`/api/alegra/invoices${query ? `?${query}` : ''}`)
+        .then(renderDashboard)
+        .catch(error => {
+          $('connection').textContent = 'Alegra error';
+          $('connection').classList.add('error');
+          showError(error);
+        });
+    }
+
+    function refreshDashboard() {
+      return currentSource === 'alegra' ? loadAlegra() : loadCsv();
+    }
+
+    function showError(error) {
+      $('subtitle').textContent = 'No se pudo cargar la informacion';
+      $('resultStatus').textContent = 'Error';
+      $('result').textContent = error.message;
+    }
+
+    function openProduct(index) {
+      const product = (currentData.topProductosGanancia || [])[index];
+      if (!product) return;
+
+      openDrawer(`
+        <h3>${escapeHtml(product.name)}</h3>
+        <p class="subtitle">Detalle por producto</p>
+        ${details({
+          Ingresos: money.format(product.sales),
+          Costo: money.format(product.cost),
+          Utilidad: money.format(product.profit),
+          Margen: pct(product.margin),
+          Unidades: number.format(product.units),
+          Ordenes: number.format(product.orders)
+        })}
+      `);
+    }
+
+    function openOrder(id) {
+      const order = (currentData.ordenes || []).find(item => item.id === id);
+      if (!order) return;
+
+      const items = order.items.map(item => `
+        <tr>
+          <td>${escapeHtml(item.name)}</td>
+          <td>${number.format(item.quantity)}</td>
+          <td>${money.format(item.sales)}</td>
+          <td>${money.format(item.cost)}</td>
+          <td class="${item.profit >= 0 ? 'positive' : 'negative'}">${money.format(item.profit)}</td>
+        </tr>
+      `).join('');
+
+      openDrawer(`
+        <h3>Orden ${escapeHtml(order.id)}</h3>
+        <p class="subtitle">${escapeHtml(order.customer)} | ${escapeHtml(order.status)}</p>
+        ${details({
+          Ingresos: money.format(order.sales),
+          Costo: money.format(order.cost),
+          Utilidad: money.format(order.profit),
+          Margen: pct(order.margin),
+          Unidades: number.format(order.units)
+        })}
+        <table>
+          <thead><tr><th>Producto</th><th>Uds</th><th>Venta</th><th>Costo</th><th>Utilidad</th></tr></thead>
+          <tbody>${items}</tbody>
+        </table>
+      `);
+    }
+
+    function details(values) {
+      return `
+        <dl>
+          ${Object.entries(values).map(([key, value]) => `
+            <div><dt>${escapeHtml(key)}</dt><dd>${escapeHtml(value)}</dd></div>
+          `).join('')}
+        </dl>
+      `;
+    }
+
+    function openDrawer(html) {
+      $('drawerContent').innerHTML = html;
+      $('drawer').classList.add('open');
+    }
+
+    function closeDrawer() {
+      $('drawer').classList.remove('open');
+    }
+
+    function toggleHelp() {
+      $('helpBox').classList.toggle('hidden');
+    }
+
+    function exportReport() {
+      if (!currentData) return;
+      const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `reporte-${currentData.source}-${currentData.fecha}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    $('csvForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const file = $('csvFile').files[0];
+      if (!file) return;
+
+      currentSource = 'csv';
+      const formData = new FormData();
+      formData.append('file', file);
+      const query = selectedParams();
+
+      requestJson(`/api/upload-csv${query ? `?${query}` : ''}`, {
+        method: 'POST',
+        body: formData
+      })
+        .then(renderDashboard)
+        .catch(showError);
     });
-}
 
-// auto cargar
-cargarDashboard();
+    ['search', 'statusFilter', 'productFilter', 'customerFilter', 'fromDate', 'toDate'].forEach(id => {
+      $(id).addEventListener('change', refreshDashboard);
+    });
 
-</script>
+    $('search').addEventListener('keydown', event => {
+      if (event.key === 'Enter') refreshDashboard();
+    });
 
+    loadCsv();
+  </script>
 </body>
 </html>
