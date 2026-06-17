@@ -528,10 +528,10 @@
         <span>Business analytics</span>
       </div>
       <nav class="nav">
-        <a class="active" href="#dashboard">Dashboard</a>
-        <a href="#products">Productos</a>
-        <a href="#orders">Ordenes</a>
-        <a href="#profit">Utilidad</a>
+        <a class="active" href="#dashboard" data-section="dashboard">Dashboard</a>
+        <a href="#products" data-section="products">Productos</a>
+        <a href="#orders" data-section="orders">Ordenes</a>
+        <a href="#profit" data-section="profit">Utilidad</a>
       </nav>
       <div class="help">
         <strong>Como usarlo</strong><br>
@@ -580,7 +580,7 @@
         Primero carga datos desde Alegra o CSV. Alegra cruza facturas con productos para calcular costo y utilidad. CSV no trae costo, por eso su utilidad se muestra igual a ventas hasta que agreguemos costos por SKU.
       </section>
 
-      <section class="grid kpis">
+      <section id="dashboard" class="grid kpis">
         <article class="card kpi"><span>Ingresos</span><strong id="sales">$0</strong><small>Ventas totales</small></article>
         <article class="card kpi"><span>Utilidad</span><strong id="profit" class="positive">$0</strong><small>Ganancia estimada</small></article>
         <article class="card kpi"><span>Margen</span><strong id="margin">0%</strong><small>Utilidad / ingresos</small></article>
@@ -589,7 +589,7 @@
         <article class="card kpi"><span>Utilidad/pedido</span><strong id="profitOrder">$0</strong><small>Promedio</small></article>
       </section>
 
-      <section class="grid main-grid">
+      <section id="profit" class="grid main-grid">
         <article class="card panel">
           <div class="panel-header">
             <h2>Ventas vs utilidad</h2>
@@ -625,7 +625,27 @@
         </article>
       </section>
 
-      <section class="card panel" style="margin-top: 16px;">
+      <section id="products" class="card panel" style="margin-top: 16px;">
+        <div class="panel-header">
+          <h2>Productos</h2>
+          <span>Listado completo de la fuente cargada</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Unidades</th>
+              <th>Ingresos</th>
+              <th>Costo</th>
+              <th>Utilidad</th>
+              <th>Margen</th>
+            </tr>
+          </thead>
+          <tbody id="productsTable"></tbody>
+        </table>
+      </section>
+
+      <section id="orders" class="card panel" style="margin-top: 16px;">
         <div class="panel-header">
           <h2>Ordenes recientes</h2>
           <span>Click para detalle</span>
@@ -635,6 +655,7 @@
             <tr>
               <th>Orden</th>
               <th>Cliente</th>
+              <th>Documento</th>
               <th>Estado</th>
               <th>Ingresos</th>
               <th>Costo</th>
@@ -806,6 +827,28 @@
       });
     }
 
+    function clearDashboard(message) {
+      destroy(salesProfitChart);
+      destroy(profitChart);
+      destroy(mixChart);
+      salesProfitChart = null;
+      profitChart = null;
+      mixChart = null;
+      currentData = null;
+
+      $('sales').textContent = money.format(0);
+      $('profit').textContent = money.format(0);
+      $('profit').className = 'positive';
+      $('margin').textContent = pct(0);
+      $('cost').textContent = money.format(0);
+      $('orders').textContent = number.format(0);
+      $('profitOrder').textContent = money.format(0);
+      $('topProducts').innerHTML = `<div class="help">${escapeHtml(message || 'Sin datos para mostrar.')}</div>`;
+      $('productsTable').innerHTML = '';
+      $('ordersTable').innerHTML = '';
+      $('result').textContent = message || 'Sin datos para mostrar.';
+    }
+
     function chartOptions(showLegend) {
       return {
         responsive: true,
@@ -851,6 +894,7 @@
         <tr onclick="openOrder('${escapeHtml(order.id)}')">
           <td>${escapeHtml(order.id)}</td>
           <td>${escapeHtml(order.customer)}</td>
+          <td>${escapeHtml(order.customerDocument || '')}</td>
           <td><span class="status ${order.status === 'finished' ? 'finished' : ''}">${escapeHtml(order.status)}</span></td>
           <td>${money.format(order.sales)}</td>
           <td>${money.format(order.cost)}</td>
@@ -860,10 +904,26 @@
       `).join('');
     }
 
+    function renderProducts() {
+      const products = currentData.productos || [];
+
+      $('productsTable').innerHTML = products.map((product, index) => `
+        <tr onclick="openProductFromList(${index})">
+          <td>${escapeHtml(product.name)}</td>
+          <td>${number.format(product.units)}</td>
+          <td>${money.format(product.sales)}</td>
+          <td>${money.format(product.cost)}</td>
+          <td class="${product.profit >= 0 ? 'positive' : 'negative'}">${money.format(product.profit)}</td>
+          <td>${pct(product.margin)}</td>
+        </tr>
+      `).join('');
+    }
+
     function renderDashboard(data) {
       currentData = data;
 
       if (data.empty) {
+        clearDashboard(data.message);
         $('subtitle').textContent = data.message || 'Sin datos para mostrar.';
         $('result').textContent = data.message || 'Sin datos.';
         return;
@@ -888,6 +948,7 @@
       renderProfitChart();
       renderMixChart();
       $('topProducts').innerHTML = rankRows(data.topProductosGanancia || []);
+      renderProducts();
       renderOrders();
       $('resultStatus').textContent = 'Listo';
     }
@@ -921,6 +982,7 @@
     }
 
     function showError(error) {
+      clearDashboard(error.message);
       $('subtitle').textContent = 'No se pudo cargar la informacion';
       $('resultStatus').textContent = 'Error';
       $('result').textContent = error.message;
@@ -930,6 +992,17 @@
       const product = (currentData.topProductosGanancia || [])[index];
       if (!product) return;
 
+      renderProductDrawer(product);
+    }
+
+    function openProductFromList(index) {
+      const product = (currentData.productos || [])[index];
+      if (!product) return;
+
+      renderProductDrawer(product);
+    }
+
+    function renderProductDrawer(product) {
       openDrawer(`
         <h3>${escapeHtml(product.name)}</h3>
         <p class="subtitle">Detalle por producto</p>
@@ -960,7 +1033,7 @@
 
       openDrawer(`
         <h3>Orden ${escapeHtml(order.id)}</h3>
-        <p class="subtitle">${escapeHtml(order.customer)} | ${escapeHtml(order.status)}</p>
+        <p class="subtitle">${escapeHtml(order.customer)}${order.customerDocument ? ' | Doc. ' + escapeHtml(order.customerDocument) : ''} | ${escapeHtml(order.status)}</p>
         ${details({
           Ingresos: money.format(order.sales),
           Costo: money.format(order.cost),
@@ -1009,6 +1082,26 @@
       URL.revokeObjectURL(url);
     }
 
+    function activateSection(sectionId) {
+      document.querySelectorAll('.nav a').forEach(link => {
+        link.classList.toggle('active', link.dataset.section === sectionId);
+      });
+
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const sectionId = link.dataset.section;
+        history.replaceState(null, '', `#${sectionId}`);
+        activateSection(sectionId);
+      });
+    });
+
     $('csvForm').addEventListener('submit', event => {
       event.preventDefault();
       const file = $('csvFile').files[0];
@@ -1036,6 +1129,11 @@
     });
 
     loadCsv();
+
+    if (location.hash) {
+      const sectionId = location.hash.replace('#', '');
+      setTimeout(() => activateSection(sectionId), 250);
+    }
   </script>
 </body>
 </html>

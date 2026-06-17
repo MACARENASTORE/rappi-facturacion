@@ -11,8 +11,9 @@ function dashboardOptions(req) {
     product: req.query.product || undefined,
     customer: req.query.customer || undefined,
     q: req.query.q || undefined,
-    limit: Number(req.query.limit) || 100,
-    itemLimit: Number(req.query.itemLimit) || 100
+    limit: Math.min(Number(req.query.limit) || 30, 30),
+    itemLimit: Math.min(Number(req.query.itemLimit) || 30, 30),
+    maxPages: Math.min(Number(req.query.maxPages) || 3, 10)
   };
 }
 

@@ -1,0 +1,343 @@
+Estado,ID de la orden,Fecha de creación,Usuario,Email,Teléfono,Documento,Dirección,Tienda,ID del repartidor,Repartidor,Producto,Descripción,EAN,SKU,¿Necesita prescripción médica?,URL de la prescripción,ID del producto,Tipo de venta,Total en gramos,Unidades,Precio unitario,Precio total,Descuento,Precio con descuento,Subtotal,Descuento total de los productos,Descuento asumido por el aliado,Descuento de campañas,Pago total al aliado,Ciudad,Nombre de marca,Nombre de tienda,ID de tienda,Hora de envío,Tiempo estimado de entrega,Productos escogidos por
+finished,2455928891,2026-05-06 11:04:24,ANA SOFIA MARTÍNEZ PINZÓN,anasmartinezp1@gmail.com,3174585071,,Avenida Carrera 9 # 101 - 67,macarenastore,1326353,CARLOS DIAZ,Raffaello Galleta Cubierta de Coco con Relleno de Almendra Entera,"Deleita tu paladar con esta galleta cubierta de coco con relleno de almendras, ingredientes de excelente calidad para un delicioso sabor. Especial para detalle o para que degustes cuando tú desees. Contiene 15 unidades.",8000500023976,macarenastore_000180,false,--,2121331302,U,0,1,42000.00,42000.00,8400.00,33600.00,42000.00,8400.00,8400.00,0.00,33600.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Chicle Crazy Roll Metro,chicle crazy roll metro,,macarenastore_chiclecrazyrollmetro,false,--,2122872890,U,0,1,2000.00,2000.00,0.00,2000.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Fini Cintas Manzanamelon X96uds,"fini cintas manzanamelon x96uds
+",8410525195501,macarenastore_000343,false,--,2121378312,U,0,1,25000.00,25000.00,2500.00,22500.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Cavendish & Harvey Raspberry & Peach Drops 175g,"Cavendish & Harvey Raspberry & Peach Drops 175g – Sabor Frutal con Toque Gourmet
+Disfruta de una deliciosa combinación de frambuesa jugosa y durazno suave con los caramelos Cavendish & Harvey Raspberry & Peach Drops. Elaborados en Alemania con auténtico jugo de fruta, cada caramelo ofrece un sabor dulce, afrutado y equilibrado, ideal para quienes buscan un toque gourmet en su día a día.
+
+Presentados en una elegante lata dorada de 175g (6.17 oz), estos dulces no solo conservan su frescura, sino que también son perfectos para compartir, regalar o simplemente para darte un gusto personal. Su sabor intenso y su textura que se derrite en la boca hacen que cada bocado sea una experiencia única.
+
+Ideales para cualquier ocasión, estos caramelos destacan por su calidad superior, su cuidada presentación y su irresistible sabor frutal.
+
+Combinación frutal única: Sabor intenso a frambuesa y durazno con un equilibrio perfecto entre dulzura y frescura.
+
+Elaborados con jugo de fruta natural: Máxima calidad y sabor real en cada caramelo.
+
+Presentación elegante: Lata dorada de 175g que conserva frescura y es ideal para regalar.
+
+Perfectos para cualquier ocasión: Ideales para compartir, obsequiar o disfrutar en el día a día.
+
+Hechos en Alemania: Tradición y excelencia europea en confitería premium.
+
+Disfrute prolongado: Contenido de 6.17 oz que ofrece varias porciones para consumo personal o compartido.",4037719068171,macarenastore_000825,false,--,2121590774,U,0,1,18000.00,18000.00,0.00,18000.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Citrus Fruit Dulce Finos Cavendish & Harvey,Pote.,4037719066993,macarenastore_000827,false,--,2121590790,U,0,1,18000.00,18000.00,0.00,18000.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Chocolates Adro Caja X10und,Chocolates Adro Caja X10und,6922235800887,macarenastore_6922235800887,false,--,2123763115,U,0,1,19800.00,19800.00,9900.00,9900.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455903479,2026-05-06 08:51:34,Nana Cevallos,dialecen@hotmail.com,3043279847,,Cl. 22a #44c 25,macarenastore,235525,Harley Steven Cuervo Gutierrez,Garoto Bombones de Chocolate Surtidos,"Bombones de chocolate surtidos. Es un regalo que fascina a los ojos, una sorpresa y un intercambio de cariño. Para cualquier momento y en cualquier lugar, posee una diversidad de sabores que agrada a todos los gustos. Presentación en caja X 170 gr. packing: Caja",7709990082227,macarenastore_000344,false,--,2121378324,U,0,1,28800.00,28800.00,1440.00,27360.00,111600.00,22990.00,13840.00,0.00,97760.00,Bogotá,--,--,900250638,--,--,--
+finished,2455893087,2026-05-06 07:39:01,Viviana Torrado Alvarez,vivitorrado@hotmail.com,3103239678,,Avenida El Dorado # 103 - 14,macarenastore,1458740,Edwin Mauricio Rodriguez Aza,Gomas Efrutti Starfish 1000 g – Gomitas Surtidas Con Forma De Estrella De Mar,"Gomas Efrutti Starfish 1000 g en bolsa son dulces de goma suaves y deliciosos con forma de estrella de mar y sabores frutales irresistibles. Cada bolsa contiene 1 kg de golosinas, ideal para compartir en fiestas, cumpleaños o simplemente disfrutar como snack divertido.",677840801984,macarenastore_677840801984,false,--,2126161677,U,0,1,79800.00,79800.00,7980.00,71820.00,125400.00,7980.00,7980.00,0.00,117420.00,Bogotá,--,--,900250638,--,--,--
+finished,2455893087,2026-05-06 07:39:01,Viviana Torrado Alvarez,vivitorrado@hotmail.com,3103239678,,Avenida El Dorado # 103 - 14,macarenastore,1458740,Edwin Mauricio Rodriguez Aza,Chicle Bubbaluu Fresa X 47 Und.,Chicle Bubbaluu Fresa X 47 Und.,7622202222054,macarenastore_7622202222054,false,--,2123764289,U,0,1,15800.00,15800.00,0.00,15800.00,125400.00,7980.00,7980.00,0.00,117420.00,Bogotá,--,--,900250638,--,--,--
+finished,2455893087,2026-05-06 07:39:01,Viviana Torrado Alvarez,vivitorrado@hotmail.com,3103239678,,Avenida El Dorado # 103 - 14,macarenastore,1458740,Edwin Mauricio Rodriguez Aza,Skittles Gummies Original 164.4g,Skittles Gummies Original 164.4g,022000285942,macarenastore_022000285942,false,--,2125533887,U,0,1,29800.00,29800.00,0.00,29800.00,125400.00,7980.00,7980.00,0.00,117420.00,Bogotá,--,--,900250638,--,--,--
+finished,2455803878,2026-05-05 19:10:34,ivan torres,ivanjosetorresp@gmail.com,3123118531,,Calle 65 # 23 - 19,macarenastore,971358,Yoel Enrique Alvarez,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,1,30000.00,30000.00,1500.00,28500.00,30000.00,1500.00,1500.00,0.00,28500.00,Bogotá,--,--,900250638,--,--,--
+finished,2455788124,2026-05-05 18:39:38,Sara Gomez,saritalol2004@yahoo.com,3024541567,,"Cl. 103 #22-13, Bogotá, Colombia,edificio sparta apt201",macarenastore,1203866,Edwin Alfonso Puin Caro,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,3,30000.00,90000.00,4500.00,85500.00,90000.00,4500.00,4500.00,0.00,85500.00,Bogotá,--,--,900250638,--,--,--
+finished,2455727202,2026-05-05 15:38:27,Manuela none,manuelaocho@hotmail.com,3176720172,1000151136," Calle 126 # 11-82 ",macarenastore,696276,Carlos Arley Pereira Lievano,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,1,30000.00,30000.00,1500.00,28500.00,30000.00,1500.00,1500.00,0.00,28500.00,Bogotá,--,--,900250638,--,--,--
+finished,2455704481,2026-05-05 14:23:55,juan a. garcia,juanchgg@icloud.com,3182754328,,Calle 95 # 17 - 30,macarenastore,1372871,Juan De Jesus Hernandez Morales,Barra Lok Premium Products Chocolate Oscuro 85% Fino Arom (60 Gr),Barra LOK PREMIUM PRODUCTS Chocolate Oscuro 85% Fino Arom (60  gr),7708100367391,macarenastore_7708100367391,false,--,2125178939,U,0,4,22000.00,88000.00,8800.00,79200.00,88000.00,8800.00,8800.00,0.00,79200.00,Bogotá,--,--,900250638,--,--,--
+finished,2455501589,2026-05-04 18:46:59,Luisa María Lamadrid Madrigal,luisalamadrid98@gmail.com,3115709285,1233499343,Cl. 77 #129 - 70,macarenastore,1112186,Warner Joan Camacho Contreras,Garoto Bombones de Chocolate Surtidos,"Bombones de chocolate surtidos. Es un regalo que fascina a los ojos, una sorpresa y un intercambio de cariño. Para cualquier momento y en cualquier lugar, posee una diversidad de sabores que agrada a todos los gustos. Presentación en caja X 170 gr. packing: Caja",7709990082227,macarenastore_000344,false,--,2121378324,U,0,2,28800.00,57600.00,2880.00,54720.00,57600.00,8630.00,8630.00,0.00,48970.00,Bogotá,--,--,900250638,--,--,--
+finished,2455478548,2026-05-04 17:53:18,Victor  Rios,victorfifa2050@gmail.com,3118955887,,Carrera 58 # 66 B - 50,macarenastore,13049,german andres angulo arias,Desodorante Antitranspirante Roll-on Leche De Algodón,Desodorante Antitranspirante Roll-on Leche De Algodón,7909883000967,macarenastore_7909883000967,false,--,2119958743,U,0,2,25100.00,50200.00,0.00,50200.00,50200.00,0.00,0.00,0.00,50200.00,Bogotá,--,--,900250638,--,--,--
+finished,2455469906,2026-05-04 17:27:47,Luisa Gil,lulu022007@gmail.com,3012341554,,Cl. 143 #17-35,macarenastore,1423903,Delkis Jose Narvaez Sierra,Ramen Buldak Original Samyang 140 G,El Ramen Buldak Original Samyang 140 g es el clásico coreano reconocido por su alto nivel de picante y sabor intenso. Perfecto para los amantes del ramen que buscan una experiencia auténtica y potente.,8801073110502,macarenastore_8801073110502,false,--,2126360545,U,0,2,22000.00,44000.00,0.00,44000.00,44000.00,0.00,0.00,0.00,44000.00,Bogotá,--,--,900250638,--,--,--
+finished,2455447679,2026-05-04 16:12:33,Valentina Chacón,valentinachacon900@gmail.com,3138828939,,CL 112 # 17 - 77,macarenastore,1423903,Delkis Jose Narvaez Sierra,Ring Pop Twisted X12und,Ring Pop Twisted x12und ,7798040464656,macarenastore_7798040464656,false,--,2124904813,U,0,1,34800.00,34800.00,5220.00,29580.00,54600.00,15120.00,15120.00,0.00,39480.00,Bogotá,--,--,900250638,--,--,--
+finished,2455447679,2026-05-04 16:12:33,Valentina Chacón,valentinachacon900@gmail.com,3138828939,,CL 112 # 17 - 77,macarenastore,1423903,Delkis Jose Narvaez Sierra,Revolcon Hiper Ácido Chupeta X12und,"Revolcon Hiper Ácido chupeta, Polvo Hiper Ácido, Centro Masticable, Sabores Mango Biche y Lulo",7702993044162,macarenastore_7702993044162,false,--,2122487800,U,0,1,19800.00,19800.00,9900.00,9900.00,54600.00,15120.00,15120.00,0.00,39480.00,Bogotá,--,--,900250638,--,--,--
+finished,2455442184,2026-05-04 15:54:03,Vanessa A.,varcilac@gmail.com,3168570855,,Calle 50 # 16 - 46,macarenastore,1447971,David Andres Arcila Gut,Lok Barra Premium Products Chocolate Oscuro 70% Barks,Barra LOK PREMIUM PRODUCTS Chocolate Oscuro 70% Barks (60 gr),7708100367971,macarenastore_7708100367971,false,--,2125576762,U,0,1,24800.00,24800.00,0.00,24800.00,49600.00,0.00,0.00,0.00,49600.00,Bogotá,--,--,900250638,--,--,--
+finished,2455442184,2026-05-04 15:54:03,Vanessa A.,varcilac@gmail.com,3168570855,,Calle 50 # 16 - 46,macarenastore,1447971,David Andres Arcila Gut,Barra Lok Premium Products Chocolate Oscuro 70% Arandanos (60 Gr),Barra LOK PREMIUM PRODUCTS Chocolate Oscuro 70% Arandanos (60  gr),7708100367773,macarenastore_7708100367773,false,--,2125576753,U,0,1,24800.00,24800.00,0.00,24800.00,49600.00,0.00,0.00,0.00,49600.00,Bogotá,--,--,900250638,--,--,--
+finished,2455413446,2026-05-04 14:17:35,Francisco Orrego Orrego,fjorregoc18@hotmail.com,3175055158,,Carrera 19 C # 85 - 63,macarenastore,1452907,Liza Cristina Pardo Hurtado,Fini Cintas Manzanamelon X96uds,"fini cintas manzanamelon x96uds
+",8410525195501,macarenastore_000343,false,--,2121378312,U,0,1,25000.00,25000.00,2500.00,22500.00,25000.00,3750.00,2500.00,0.00,22500.00,Bogotá,--,--,900250638,--,--,--
+finished,2455388208,2026-05-04 13:03:46,David Fernando Estacio Quiroz,festacio00@gmail.com,3166517814,1086756559,Carrera 11 A # 96 - 43,macarenastore,313993,JOSE ANTONIO GOMEZ GUTIERREZ,Garoto Bombones de Chocolate Surtidos,"Bombones de chocolate surtidos. Es un regalo que fascina a los ojos, una sorpresa y un intercambio de cariño. Para cualquier momento y en cualquier lugar, posee una diversidad de sabores que agrada a todos los gustos. Presentación en caja X 170 gr. packing: Caja",7709990082227,macarenastore_000344,false,--,2121378324,U,0,1,28800.00,28800.00,1440.00,27360.00,28800.00,4340.00,4340.00,0.00,24460.00,Bogotá,--,--,900250638,--,--,--
+finished,2455367032,2026-05-04 12:11:46,Fayzal Alfredo Eljadue Eljadue,u1802208@unimilitar.edu.co,3012027575,1032463635,KR 49 A # 84 - 68,macarenastore,345091,Bryan Erick Martinez Castrillon,Gomas Efrutti Starfish 1000 g – Gomitas Surtidas Con Forma De Estrella De Mar,"Gomas Efrutti Starfish 1000 g en bolsa son dulces de goma suaves y deliciosos con forma de estrella de mar y sabores frutales irresistibles. Cada bolsa contiene 1 kg de golosinas, ideal para compartir en fiestas, cumpleaños o simplemente disfrutar como snack divertido.",677840801984,macarenastore_677840801984,false,--,2126161677,U,0,1,79800.00,79800.00,7980.00,71820.00,79800.00,7980.00,7980.00,0.00,71820.00,Bogotá,--,--,900250638,--,--,--
+finished,2455320552,2026-05-04 08:57:20,Santiago  Lopez ,santiagolopez2003@hotmail.com,3053407043,,Avenida El Dorado # 59 - 15,macarenastore,1437370,Jeison Enrique Arroyo Rivas,Garoto Bombones de Chocolate Surtidos,"Bombones de chocolate surtidos. Es un regalo que fascina a los ojos, una sorpresa y un intercambio de cariño. Para cualquier momento y en cualquier lugar, posee una diversidad de sabores que agrada a todos los gustos. Presentación en caja X 170 gr. packing: Caja",7709990082227,macarenastore_000344,false,--,2121378324,U,0,1,28800.00,28800.00,1440.00,27360.00,96800.00,4340.00,1440.00,0.00,95360.00,Bogotá,--,--,900250638,--,--,--
+finished,2455320552,2026-05-04 08:57:20,Santiago  Lopez ,santiagolopez2003@hotmail.com,3053407043,,Avenida El Dorado # 59 - 15,macarenastore,1437370,Jeison Enrique Arroyo Rivas,Jet #1 X 50 Uds,jet #1 x 50 uds,,macarenastore_000228,false,--,2121331689,U,0,1,68000.00,68000.00,0.00,68000.00,96800.00,4340.00,1440.00,0.00,95360.00,Bogotá,--,--,900250638,--,--,--
+finished,2455158963,2026-05-03 17:27:11,Andrea Monroy,andreitamonrodri@hotmail.com,3132621140,,Cra 58#119A-98,macarenastore,90786,WILMER FERNEY GONZALEZ LINARES,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,1,30000.00,30000.00,1500.00,28500.00,30000.00,1500.00,1500.00,0.00,28500.00,Bogotá,--,--,900250638,--,--,--
+finished,2455147948,2026-05-03 17:02:17,Laura Rodriguez Cardenas,wsx2z9tmkk@privaterelay.appleid.com,3167539104,1022378006,"Carrera 22 #137-65, Bogota, Colombia",macarenastore,159645,DANIEL FELIPE GUERRERO MORENO,Hershey's Syrup Caramel 616g,hershey's syrup caramel,03431801,macarenastore_000141,false,--,2121312323,U,0,1,29800.00,29800.00,0.00,29800.00,29800.00,0.00,0.00,0.00,29800.00,Bogotá,--,--,900250638,--,--,--
+finished,2455141373,2026-05-03 16:47:32,Luis Chaves,luismiguelchaves@hotmail.com,3104583840,,Cl. 75 #5-26,macarenastore,1434751,Nodier Gallego Giraldo,Barra Chocolate Lök 92% Cacao 60 G | Cacao Colombiano Intenso,"Barra Chocolate Lök 92% Cacao 60 g | Cacao colombiano intenso
+La Barra de Chocolate Lök 92% Cacao 60 g ofrece una experiencia intensa y auténtica para los amantes del chocolate oscuro. Elaborada con cacao colombiano de alta calidad, su alto contenido de cacao proporciona un sabor profundo, amargo y sofisticado, ideal para quienes prefieren chocolates de perfil fuerte y natural.
+
+Su empaque ilustrado premium, inspirado en la biodiversidad colombiana y la conservación ambiental, refleja el compromiso de la marca con el origen del cacao y la sostenibilidad, convirtiéndola en una opción ideal tanto para consumo personal como para regalo.
+
+Atributos destacados
+92% cacao, sabor intenso y profundo.
+
+Chocolate oscuro premium, de perfil amargo y aromático.
+
+Elaborado con cacao colombiano, reconocido por su calidad y carácter.
+
+Empaque ilustrado de diseño elegante, inspirado en la fauna y flora de Colombia.
+
+Presentación de 60 g, práctica y perfecta para degustación o regalo.
+
+Marca Lök, enfocada en chocolates de origen y procesos responsables.
+
+Experiencia de consumo
+Cada bocado ofrece un sabor potente y envolvente, con notas intensas de cacao que se desarrollan lentamente en el paladar. Su textura firme permite disfrutarlo en pequeñas porciones, ideal para una degustación consciente acompañada de café, vino tinto o bebidas calientes.
+
+Recomendado para
+Personas que disfrutan de chocolates muy oscuros, sabores intensos y experiencias de degustación sofisticadas. Ideal para quienes buscan cacao puro y productos con identidad colombiana.
+
+Modo de uso
+Consumir directamente en porciones pequeñas. También puede utilizarse en repostería especializada, maridajes o preparaciones gourmet.
+
+Conservación
+Conservar en un lugar fresco y seco, alejado de la luz y el calor, para mantener su sabor, aroma y textura.
+
+Por qué te encantará
+Porque combina cacao colombiano de alta pureza, un diseño de empaque premium y artístico y una experiencia intensa que conecta sabor, origen y conciencia ambiental en cada barra.",7708100367131,macarenastore_7708100367131,false,--,2125962680,U,0,1,24800.00,24800.00,0.00,24800.00,24800.00,0.00,0.00,0.00,24800.00,Bogotá,--,--,900250638,--,--,--
+finished,2455137825,2026-05-03 16:39:35,Juan Esteban Malagon Gómez,juanesmalagon@hotmail.com,3502904808,1000383847,Calle 65 B # 71 - 21,macarenastore,110549,MARY YOLANDA MARTINEZ TORRES,Fini Cintas Manzanamelon X96uds,"fini cintas manzanamelon x96uds
+",8410525195501,macarenastore_000343,false,--,2121378312,U,0,1,25000.00,25000.00,2500.00,22500.00,25000.00,3750.00,3750.00,0.00,21250.00,Bogotá,--,--,900250638,--,--,--
+finished,2455086986,2026-05-03 14:51:37,Angela María Angulo,angela.maria.angulo.gonzalez@gmail.com,3138162409,,Calle 107a #11a-87,macarenastore,227285,JOSE ANDRES JAIMES ROJAS,Ramen Buldak Original Samyang 140 G,El Ramen Buldak Original Samyang 140 g es el clásico coreano reconocido por su alto nivel de picante y sabor intenso. Perfecto para los amantes del ramen que buscan una experiencia auténtica y potente.,8801073110502,macarenastore_8801073110502,false,--,2126360545,U,0,5,22000.00,110000.00,0.00,110000.00,155800.00,3750.00,2500.00,0.00,153300.00,Bogotá,--,--,900250638,--,--,--
+finished,2455086986,2026-05-03 14:51:37,Angela María Angulo,angela.maria.angulo.gonzalez@gmail.com,3138162409,,Calle 107a #11a-87,macarenastore,227285,JOSE ANDRES JAIMES ROJAS,Fini Cintas Manzanamelon X96uds,"fini cintas manzanamelon x96uds
+",8410525195501,macarenastore_000343,false,--,2121378312,U,0,1,25000.00,25000.00,2500.00,22500.00,155800.00,3750.00,2500.00,0.00,153300.00,Bogotá,--,--,900250638,--,--,--
+finished,2455086986,2026-05-03 14:51:37,Angela María Angulo,angela.maria.angulo.gonzalez@gmail.com,3138162409,,Calle 107a #11a-87,macarenastore,227285,JOSE ANDRES JAIMES ROJAS,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,8410525243219,macarenastore_8410525243219,false,--,2124623287,U,0,1,20800.00,20800.00,0.00,20800.00,155800.00,3750.00,2500.00,0.00,153300.00,Bogotá,--,--,900250638,--,--,--
+finished,2455010051,2026-05-03 12:37:43,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,395354,DALY LUZ MEZA ARMESTO,Chicle Trident X60und Yerbabuena,Chicle Trident x60und Yerbabuena,7622201764999,macarenastore_7622201764999,false,--,2124752289,U,0,1,19800.00,19800.00,0.00,19800.00,59400.00,0.00,0.00,0.00,59400.00,Bogotá,--,--,900250638,--,--,--
+finished,2455010051,2026-05-03 12:37:43,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,395354,DALY LUZ MEZA ARMESTO,Chicle Trident X60und Menta,Chicle Trident x60und Menta,7622202020483,macarenastore_7622202020483,false,--,2124752276,U,0,1,19800.00,19800.00,0.00,19800.00,59400.00,0.00,0.00,0.00,59400.00,Bogotá,--,--,900250638,--,--,--
+finished,2455010051,2026-05-03 12:37:43,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,395354,DALY LUZ MEZA ARMESTO,Trident Menta Fuerte X60und,Trident Menta Fuerte x60und,7622202244032,macarenastore_7622202244032,false,--,2125186638,U,0,1,19800.00,19800.00,0.00,19800.00,59400.00,0.00,0.00,0.00,59400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454888474,2026-05-02 21:41:20,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,774970,MIGUEL ANGEL PARRA GARCIA,Chicle Trident X60und Yerbabuena,Chicle Trident x60und Yerbabuena,7622201764999,macarenastore_7622201764999,false,--,2124752289,U,0,2,19800.00,39600.00,0.00,39600.00,114800.00,0.00,0.00,0.00,114800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454888474,2026-05-02 21:41:20,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,774970,MIGUEL ANGEL PARRA GARCIA,Trident Menta Fuerte X60und,Trident Menta Fuerte x60und,7622202244032,macarenastore_7622202244032,false,--,2125186638,U,0,1,19800.00,19800.00,0.00,19800.00,114800.00,0.00,0.00,0.00,114800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454888474,2026-05-02 21:41:20,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,774970,MIGUEL ANGEL PARRA GARCIA,Chicle Trident X60und Menta,Chicle Trident x60und Menta,7622202020483,macarenastore_7622202020483,false,--,2124752276,U,0,2,19800.00,39600.00,0.00,39600.00,114800.00,0.00,0.00,0.00,114800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454888474,2026-05-02 21:41:20,gretel lanner,gretel.lanner@edgewell.com,3152978975,66764103,Cl. 90 # 8-31,macarenastore,774970,MIGUEL ANGEL PARRA GARCIA,Chicle Bubbaluu Fruta X 47 Und.,Chicle Bubbaluu Fruta X 47 Und.,7622202222023,macarenastore_7622202222023,false,--,2123764268,U,0,1,15800.00,15800.00,0.00,15800.00,114800.00,0.00,0.00,0.00,114800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454800273,2026-05-02 18:47:05,Sarah Hernandez,eliottlechter@gmail.com,3178951925,,Cl. 79 #8-21,macarenastore,1409745,Kevin Hornache Lopez Jaime,Fini Cintas Manzanamelon X96uds,"fini cintas manzanamelon x96uds
+",8410525195501,macarenastore_000343,false,--,2121378312,U,0,1,25000.00,25000.00,2500.00,22500.00,25000.00,3750.00,2500.00,0.00,22500.00,Bogotá,--,--,900250638,--,--,--
+finished,2454794575,2026-05-02 18:37:09,Juan Sebastián Bautista Grillo,juanse227@hotmail.com,3005248688,1026271247,Carrera 18 C # 121 - 26,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Peelerz Piña 65 G | Gomitas Masticables Pelables Sabor Piña,"Disfruta las gomitas Peelerz sabor piña de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287188,macarenastore_6936756287188,false,--,2126118018,U,0,1,15800.00,15800.00,0.00,15800.00,48400.00,0.00,0.00,0.00,48400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454794575,2026-05-02 18:37:09,Juan Sebastián Bautista Grillo,juanse227@hotmail.com,3005248688,1026271247,Carrera 18 C # 121 - 26,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Gomas Peelerz Banana 85 G | Sabor Dulce A Banano,"Gomas Peelerz Banana 85 g | Sabor a banano dulce y textura suave
+Las Gomas Peelerz Banana 85 g ofrecen un delicioso sabor a banano con una textura suave, elástica y agradable al paladar. Su presentación práctica de 85 g las convierte en el snack ideal para llevar, compartir o disfrutar en cualquier momento del día. Son perfectas para quienes aman los sabores frutales clásicos y dulces.
+
+Atributos destacados
+Gomas sabor banano, con un perfil dulce y afrutado.
+
+Textura suave y fácil de masticar, apta para niños y adultos.
+
+Presentación de 85 g, ideal para loncheras, oficina y snacks diarios.
+
+Producto versátil, perfecto para anchetas, mesas de dulces, piñatas y detalles especiales.
+
+Marca Peelerz, reconocida por ofrecer sabores intensos y divertidos.
+
+Experiencia de consumo
+Cada goma brinda un sabor a banano dulce y característico, con una textura tierna que permite disfrutar un bocado suave y delicioso. Su combinación de dulzura y suavidad crea un snack irresistible.
+
+Recomendado para
+Personas que buscan snacks dulces y frutales, especialmente quienes disfrutan del sabor a banano en gomitas suaves y fáciles de disfrutar.
+
+Modo de uso
+Consumir directamente. También pueden utilizarse para complementar anchetas, detalles, celebraciones infantiles o como snack entre comidas.
+
+Conservación
+Mantener en un lugar fresco y seco. Cerrar bien el empaque después de abrir para conservar su sabor y textura.
+
+Por qué te encantará
+Porque combina sabor auténtico a banano, textura suave y practicidad, convirtiéndose en un snack frutal perfecto para cualquier ocasión.",810051809428,macarenastore_810051809428,false,--,2125941204,U,0,1,22800.00,22800.00,0.00,22800.00,48400.00,0.00,0.00,0.00,48400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454794575,2026-05-02 18:37:09,Juan Sebastián Bautista Grillo,juanse227@hotmail.com,3005248688,1026271247,Carrera 18 C # 121 - 26,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Peelerz Piña 35 G | Gomitas Masticables Pelables Sabor Piña,"Disfruta Peelerz Piña 35 g, gomitas masticables pelables con delicioso sabor a piña. Dulce divertido, textura suave, libre de gluten e ideal para cualquier momento.",6936756287102,macarenastore_6936756287102,false,--,2126117967,U,0,1,9800.00,9800.00,0.00,9800.00,48400.00,0.00,0.00,0.00,48400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454790243,2026-05-02 18:29:32,Jessica Sáenz,celestecaicedo2006@gmail.com,3223599975,,Cra. 115a #89B-20,macarenastore,820654,ESTEFANY VANESA QUIÑONEZ CACAIS,Ramen Buldak Original Samyang 140 G,El Ramen Buldak Original Samyang 140 g es el clásico coreano reconocido por su alto nivel de picante y sabor intenso. Perfecto para los amantes del ramen que buscan una experiencia auténtica y potente.,8801073110502,macarenastore_8801073110502,false,--,2126360545,U,0,2,22000.00,44000.00,0.00,44000.00,66000.00,0.00,0.00,0.00,66000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454790243,2026-05-02 18:29:32,Jessica Sáenz,celestecaicedo2006@gmail.com,3223599975,,Cra. 115a #89B-20,macarenastore,820654,ESTEFANY VANESA QUIÑONEZ CACAIS,Ramen Buldok Habanero Y Lime X Unidad 135 Gr,El Ramen Buldak Habanero & Lime Samyang 135 g ofrece una mezcla única de picante intenso con un toque fresco y cítrico. Ideal para quienes buscan una experiencia diferente dentro del ramen coreano.,8801073115514,macarenastore_8801073115514,false,--,2126360550,U,0,1,22000.00,22000.00,0.00,22000.00,66000.00,0.00,0.00,0.00,66000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454770947,2026-05-02 17:49:55,Pilar Braña,pilibrr12@gmail.com,3115192243,,Calle 126 A # 07 - 83,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,1,30000.00,30000.00,1500.00,28500.00,60000.00,3000.00,3000.00,0.00,57000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454770947,2026-05-02 17:49:55,Pilar Braña,pilibrr12@gmail.com,3115192243,,Calle 126 A # 07 - 83,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Ramen Buldak Original Samyang Vaso 105 G,El Ramen Buldak Original Samyang 105 g en vaso es perfecto para quienes buscan el auténtico picante coreano en una presentación práctica. Ideal para preparar en minutos y disfrutar en cualquier momento.,8801073210363,macarenastore_8801073210363,false,--,2126365718,U,0,1,30000.00,30000.00,1500.00,28500.00,60000.00,3000.00,3000.00,0.00,57000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454760683,2026-05-02 17:24:51,Isabella Yepes,isayepes91@hotmail.com,3144136052,,Calle 104 # 17 - 37,macarenastore,168352,EDISON MONTOYA CHAVEZ,Ring Pop Twisted X12und,Ring Pop Twisted x12und ,7798040464656,macarenastore_7798040464656,false,--,2124904813,U,0,2,34800.00,69600.00,10440.00,59160.00,69600.00,10440.00,10440.00,0.00,59160.00,Bogotá,--,--,900250638,--,--,--
+finished,2454760440,2026-05-02 17:24:17,Fernanda .,bye.wearco@gmail.com,3017151409,,Calle 23 # 73 - 64,macarenastore,474701,FRANKLIN LEONARDO TORRES ZAMBRANO,Quimbaya Bridge,"Es una deliciosa galleta de chocolate compuesta de una wafer en el centro y recubierta de exquisito chocolate con leche, ideal para romper esos antojos del día y endulzar tus momentos.",7702011014290,macarenastore_000322,false,--,2121377556,U,0,1,16800.00,16800.00,0.00,16800.00,16800.00,0.00,0.00,0.00,16800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Peelerz Banano 65 G | Gomitas Masticables Pelables Sabor Banano,"Disfruta las gomitas Peelerz sabor banano de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287171,macarenastore_6936756287171,false,--,2126118013,U,0,1,15800.00,15800.00,0.00,15800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Gomas Peelerz Pineapple 85 G,"Gomas Peelerz Pineapple 85 g | Sabor tropical y textura irresistible
+Descripción del producto
+Las Gomas Peelerz Pineapple 85 g ofrecen un delicioso sabor a piña con una textura suave, elástica y fácil de disfrutar. Su mezcla tropical y dulce las convierte en el snack ideal para quienes aman los sabores frutales intensos. Gracias a su presentación práctica de 85 g, son perfectas para llevar, compartir o disfrutar en cualquier momento del día.
+
+Atributos destacados
+Gomas sabor piña, con un perfil dulce y refrescante.
+
+Textura suave y fácil de masticar, ideal para niños y adultos.
+
+Presentación de 85 g, perfecta para loncheras, oficina o snacks diarios.
+
+Producto versátil, ideal para detalles, anchetas, celebraciones o mesas de dulces.
+
+Marca Peelerz, reconocida por sus sabores frutales intensos y divertidos.
+
+Experiencia de consumo
+Cada goma ofrece un sabor tropical vibrante que combina dulzura y frescura. Su textura suave las hace perfectas para disfrutar lentamente o en pequeños bocados, convirtiéndolas en un snack agradable y adictivo.
+
+Recomendado para
+Personas que disfrutan de sabores frutales tropicales, snacks dulces y gomitas suaves ideales para compartir con amigos, familia o como acompañamiento en eventos y detalles especiales.
+
+Modo de uso
+Abrir y consumir directamente. También pueden incluirse en bolsitas de regalo, anchetas, piñatas o mesas dulces.
+
+Conservación
+Mantener en un lugar fresco y seco. Cerrar bien el empaque después de abrir para conservar su textura y sabor.
+
+Por qué te encantará
+
+Porque combina sabor a piña, suavidad y practicidad, ofreciendo una experiencia dulce, tropical y perfecta para cualquier ocasión.",810179080310,macarenastore_810179080310,false,--,2125940996,U,0,1,22800.00,22800.00,0.00,22800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Gomas Peelerz Peach 85 G | Sabor Dulce A Durazno,"Gomas Peelerz Peach 85 g | Sabor a durazno suave y delicioso
+Las Gomas Peelerz Peach 85 g combinan una textura suave y elástica con un auténtico sabor a durazno, dulce y refrescante. Gracias a su práctica presentación de 85 g, son ideales para llevar en el bolso, incluir en la lonchera, disfrutar en la oficina o compartir en cualquier momento del día.
+
+Atributos destacados
+Gomas sabor durazno, con un perfil dulce y afrutado.
+
+Textura suave y fácil de masticar, perfecta para niños y adultos.
+
+Presentación de 85 g, práctica y lista para consumir donde quieras.
+
+Versátiles, ideales para anchetas, mesas de dulces, piñatas y detalles especiales.
+
+Marca Peelerz, reconocida por sus sabores frutales auténticos y divertidos.
+
+Experiencia de consumo
+Cada goma ofrece un sabor a durazno intenso pero equilibrado, con notas dulces y frescas que hacen del snack una experiencia agradable y adictiva. Su textura tierna permite disfrutar cada bocado con facilidad.
+
+Recomendado para
+Personas que disfrutan de sabores frutales suaves y dulces, ideales para quienes buscan un snack práctico y delicioso para cualquier ocasión.
+
+Modo de uso
+Abrir y consumir directamente. También se pueden incluir en bolsitas de regalo, anchetas, celebraciones o como parte de una mesa dulce.
+
+Conservación
+Mantener en un lugar fresco y seco. Cerrar bien el empaque después de abrir para conservar su textura y sabor.
+
+Por qué te encantará
+Porque combina sabor a durazno, suavidad y practicidad, convirtiéndose en un snack dulce, versátil y perfecto para compartir.
+
+",810051805321,macarenastore_810051805321,false,--,2125941162,U,0,1,22800.00,22800.00,0.00,22800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Peelerz Piña 65 G | Gomitas Masticables Pelables Sabor Piña,"Disfruta las gomitas Peelerz sabor piña de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287188,macarenastore_6936756287188,false,--,2126118018,U,0,1,15800.00,15800.00,0.00,15800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Chicle Trident X60und Sandia,Chicle Trident x60und Sandia,7622202020520,macarenastore_7622202020520,false,--,2124752292,U,0,1,19800.00,19800.00,0.00,19800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Chicle Tatto X100unidades,Chicle Tatto X100unidades,603554027013,macarenastore_603554027013,false,--,2124041216,U,0,1,35000.00,35000.00,10500.00,24500.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Chicle Super Hyper Hot X70 Unidades,"Chicle Super Hyper Hot x70 unidades – Diversión extrema y sabor picante
+
+El Chicle Super Hyper Hot x70 unidades es una experiencia única para los amantes de los dulces intensos. Cada pieza combina un sabor dulce inicial con un sorprendente toque picante que despierta todos los sentidos. Perfecto para quienes disfrutan los retos de sabor y buscan una confitería diferente, divertida y fuera de lo común.
+
+Características principales
+Contenido: 70 unidades individuales.
+
+Sabor: Mezcla dulce y picante, con efecto “hot” progresivo.
+
+Textura: Suave y masticable, con liberación intensa de sabor.
+
+Presentación: Caja práctica, ideal para compartir, vender o usar en eventos.
+
+Tipo de producto: Goma de mascar con sabor picante.
+
+Beneficios y experiencia de consumo
+El Chicle Super Hyper Hot ofrece una experiencia distinta a cualquier otro chicle tradicional. Su sabor ardiente lo convierte en una elección popular para juegos, retos entre amigos o simplemente para quienes buscan una sensación atrevida y divertida.
+
+Recomendaciones de uso
+Consumir con moderación, especialmente si no se está acostumbrado a productos picantes.
+
+No recomendado para niños pequeños ni personas sensibles al picante.
+
+Mantener en un lugar fresco y seco, lejos de la luz solar directa.
+
+Ideal para
+Retos y dinámicas de grupo.
+
+Fiestas, piñatas o tiendas de dulces temáticos.
+
+Consumidores que buscan productos originales con sabores intensos.",7703888123320,macarenastore_7703888123320,false,--,2125790210,U,0,1,11800.00,11800.00,590.00,11210.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454753254,2026-05-02 17:06:22,Daniela Apolo,m8bfby98ys@privaterelay.appleid.com,3013873106,8182670,"Carrera 59A 128B-24,  111111 Bogotá, D.C.,  Colombia",macarenastore,117928,ALEXANDER JOSE VANEGAS ARDILA,Peelerz Uva 65 G | Gomitas Masticables Pelables Sabor Uva,"Disfruta las gomitas Peelerz sabor uva de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287195,macarenastore_6936756287195,false,--,2126118022,U,0,1,15800.00,15800.00,0.00,15800.00,159600.00,11090.00,11090.00,0.00,148510.00,Bogotá,--,--,900250638,--,--,--
+finished,2454742435,2026-05-02 16:37:06,Heildelberth Zamudio,hzamu1@hotmail.com,3142293879,,Calle 11 A # 72 B - 37,macarenastore,474701,FRANKLIN LEONARDO TORRES ZAMBRANO,"Bubols Maracuyá X 1,100 Kg | Perlas Explosivas Sabor Maracuyá","Perlas explosivas Bubols sabor maracuyá 1,100 kg. Ideales para bebidas y postres. Formato a granel, alto rendimiento y sabor tropical.",7708494790379,macarenastore_7708494790379,false,--,2124917786,U,0,1,69800.00,69800.00,13960.00,55840.00,69800.00,13960.00,13960.00,0.00,55840.00,Bogotá,--,--,900250638,--,--,--
+finished,2454712203,2026-05-02 15:19:24,isabella n,isabellanegretef15@gmail.com,3016943732,,Cl. 105 #17-46,macarenastore,992598,Carlos Eduardo Solorzano Palacios,Hershey's Syrup Caramel 616g,hershey's syrup caramel,03431801,macarenastore_000141,false,--,2121312323,U,0,1,29800.00,29800.00,0.00,29800.00,29800.00,0.00,0.00,0.00,29800.00,Bogotá,--,--,900250638,--,--,--
+finished,2454683585,2026-05-02 14:14:33,Samuel Camacho,scamachodominguez@gmail.com,3188944845,,Calle 108a # 1e-92,macarenastore,1434538,Franklin Vargas Castellanos,Gomas Peelerz Peach 85 G | Sabor Dulce A Durazno,"Gomas Peelerz Peach 85 g | Sabor a durazno suave y delicioso
+Las Gomas Peelerz Peach 85 g combinan una textura suave y elástica con un auténtico sabor a durazno, dulce y refrescante. Gracias a su práctica presentación de 85 g, son ideales para llevar en el bolso, incluir en la lonchera, disfrutar en la oficina o compartir en cualquier momento del día.
+
+Atributos destacados
+Gomas sabor durazno, con un perfil dulce y afrutado.
+
+Textura suave y fácil de masticar, perfecta para niños y adultos.
+
+Presentación de 85 g, práctica y lista para consumir donde quieras.
+
+Versátiles, ideales para anchetas, mesas de dulces, piñatas y detalles especiales.
+
+Marca Peelerz, reconocida por sus sabores frutales auténticos y divertidos.
+
+Experiencia de consumo
+Cada goma ofrece un sabor a durazno intenso pero equilibrado, con notas dulces y frescas que hacen del snack una experiencia agradable y adictiva. Su textura tierna permite disfrutar cada bocado con facilidad.
+
+Recomendado para
+Personas que disfrutan de sabores frutales suaves y dulces, ideales para quienes buscan un snack práctico y delicioso para cualquier ocasión.
+
+Modo de uso
+Abrir y consumir directamente. También se pueden incluir en bolsitas de regalo, anchetas, celebraciones o como parte de una mesa dulce.
+
+Conservación
+Mantener en un lugar fresco y seco. Cerrar bien el empaque después de abrir para conservar su textura y sabor.
+
+Por qué te encantará
+Porque combina sabor a durazno, suavidad y practicidad, convirtiéndose en un snack dulce, versátil y perfecto para compartir.
+
+",810051805321,macarenastore_810051805321,false,--,2125941162,U,0,1,22800.00,22800.00,0.00,22800.00,55400.00,0.00,0.00,0.00,55400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454683585,2026-05-02 14:14:33,Samuel Camacho,scamachodominguez@gmail.com,3188944845,,Calle 108a # 1e-92,macarenastore,1434538,Franklin Vargas Castellanos,Peelerz Orange 85 G | Gomitas Pelables Sabor Naranja Natural,"Peelerz Orange – 85 g
+
+Disfruta de una explosión cítrica y jugosa con las Peelerz Orange 85 g, las gomitas pelables con sabor a naranja que transforman el momento del dulce en una experiencia interactiva. Elaboradas con jugo real de fruta, ofrecen un sabor vibrante, natural y refrescante, ideal para quienes buscan una golosina divertida y diferente.
+
+Beneficios principales
+Gomitas pelables e innovadoras: Cada pieza se puede “pelar” capa por capa, haciendo que comerlas sea una experiencia lúdica y entretenida.
+
+Sabor natural a naranja: Dulce y ácido en el equilibrio perfecto, evocando el sabor fresco del jugo de naranja.
+
+Elaboradas con jugo real: Proporcionan un sabor más auténtico y natural, con un toque frutal irresistible.
+
+Textura suave y elástica: Masticables y agradables, ideales para niños, jóvenes y adultos.
+
+Presentación práctica: Bolsa stand-up pouch de 85 g con cierre hermético para conservar la frescura y llevar a todas partes.
+
+Características del producto
+Contenido neto: 85 g.
+
+Sabor: Naranja.
+
+Tipo de dulce: Gomitas pelables (Peelable gummy candy).
+
+Elaboradas con: Jugo de fruta real.
+
+Marca: AMOS.
+
+Origen: Producto importado.
+
+Recomendaciones de consumo
+Perfectas para disfrutar como snack, compartir en reuniones, agregar a mesas de dulces o incluir en loncheras. Su sabor cítrico las convierte en una opción ideal para quienes aman los dulces frutales refrescantes.
+
+Conservación
+
+Conservar en un lugar fresco y seco, lejos de la luz solar directa. Cerrar bien la bolsa después de abrir para mantener la frescura y textura original.",810051805352,macarenastore_810051805352,false,--,2125823394,U,0,1,22800.00,22800.00,0.00,22800.00,55400.00,0.00,0.00,0.00,55400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454683585,2026-05-02 14:14:33,Samuel Camacho,scamachodominguez@gmail.com,3188944845,,Calle 108a # 1e-92,macarenastore,1434538,Franklin Vargas Castellanos,Peelerz Uva 35 G | Gomitas Masticables Pelables Sabor Uva,"Disfruta Peelerz Uva 35 g, gomitas masticables pelables con intenso sabor a uva. Textura suave, diversión en cada bocado y snack ideal para cualquier momento.",6936756287126,macarenastore_6936756287126,false,--,2126117977,U,0,1,9800.00,9800.00,0.00,9800.00,55400.00,0.00,0.00,0.00,55400.00,Bogotá,--,--,900250638,--,--,--
+finished,2454658490,2026-05-02 13:23:13,Maria Alicia,maralicia02ams@yahoo.com,3156083485,,Calle 138#57-38,macarenastore,1159952,Jose Gregorio Hernandez Rosario,Lok Premium Products Barra Chocolate Oscuro 100%,Chocolate Oscuro.,7708100367155,macarenastore_7708100367155,false,--,2125178935,U,0,1,24800.00,24800.00,2480.00,22320.00,24800.00,2480.00,2480.00,0.00,22320.00,Bogotá,--,--,900250638,--,--,--
+finished,2454611305,2026-05-02 11:49:26,Carito Tello,caritoto05@gmail.com,3165364685,,Carrera 49 # 122 - 57,macarenastore,825514,JUAN PABLO TORRES TORRES,Peelerz Durazno 35 G | Gomitas Masticables Pelables Sabor Durazno,"Disfruta las gomitas Peelerz sabor durazno de 35 g: masticables, pelables y deliciosas, perfectas para compartir o disfrutar en cualquier momento.",6936756287140,macarenastore_6936756287140,false,--,2126118000,U,0,1,9800.00,9800.00,0.00,9800.00,25600.00,0.00,0.00,0.00,25600.00,Bogotá,--,--,900250638,--,--,--
+finished,2454611305,2026-05-02 11:49:26,Carito Tello,caritoto05@gmail.com,3165364685,,Carrera 49 # 122 - 57,macarenastore,825514,JUAN PABLO TORRES TORRES,Peelerz Uva 65 G | Gomitas Masticables Pelables Sabor Uva,"Disfruta las gomitas Peelerz sabor uva de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287195,macarenastore_6936756287195,false,--,2126118022,U,0,1,15800.00,15800.00,0.00,15800.00,25600.00,0.00,0.00,0.00,25600.00,Bogotá,--,--,900250638,--,--,--
+finished,2454551545,2026-05-02 05:42:57,Sebastian RIAÑO,larrysbn@gmail.com,3197309594,,Carrera 97 B # 20 B - 49,macarenastore,396295,Brayan Simon Velasquez Romero,Hershey's Syrup Chocolate 680g,hershey's syrup chocolate,03431801,macarenastore_000142,false,--,2121312325,U,0,1,29800.00,29800.00,1490.00,28310.00,29800.00,1490.00,1490.00,0.00,28310.00,Bogotá,--,--,900250638,--,--,--
+finished,2454456239,2026-05-01 19:34:03,David Ospina,davidospq@gmail.com,3045614848,,Carrera 49 # 94 - 38,macarenastore,1112186,Warner Joan Camacho Contreras,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,2,30000.00,60000.00,3000.00,57000.00,60000.00,3000.00,3000.00,0.00,57000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454388375,2026-05-01 17:35:02,David Callejas,davidcallejasc@gmail.com,3508953588,,Carrera 89 # 19 A - 49,macarenastore,1226943,Joselin Milagros Moreno Rojano,Mug Hello Kitty Fresas 11 Oz.,"¡Celebra la ternura con este MUG de Hello Kitty! Este adorable pocillo de 11 onzas es el regalo perfecto para cualquier amante de Hello Kitty. Además, puedes incluir unos dulces para hacerlo aún más especial.
+
+Para pedidos de tazas en cantidades o personalizados, por favor contactar al 3106469827. ¡Estamos aquí para ayudarte!",,macarenastore_20,false,--,2123075348,U,0,1,25000.00,25000.00,0.00,25000.00,25000.00,0.00,0.00,0.00,25000.00,Bogotá,--,--,900250638,--,--,--
+finished,2454096587,2026-04-30 21:02:43,María Mendoza,felipesaavedra1617@gmail.com,3154437385,52807446,"Transversal 59 Calle 104B-41,  111111 Bogotá, D.C.,  Colombia",macarenastore,1371846,GREIDIS MARIA MUÑOZ CARREÑO,Sour Patch Kids 99g,Sour Patch Kids 99g,070462098358,macarenastore_070462098358,false,--,2124622991,U,0,1,19800.00,19800.00,3960.00,15840.00,42600.00,6240.00,6240.00,0.00,36360.00,Bogotá,--,--,900250638,--,--,--
+finished,2454096587,2026-04-30 21:02:43,María Mendoza,felipesaavedra1617@gmail.com,3154437385,52807446,"Transversal 59 Calle 104B-41,  111111 Bogotá, D.C.,  Colombia",macarenastore,1371846,GREIDIS MARIA MUÑOZ CARREÑO,Nerds Gummy Clusters Very Berry 85 G | Gomitas Frutales Ácidas,"Nerds Gummy Clusters Very Berry – 85 g
+
+Disfruta una explosión de sabor con los Nerds Gummy Clusters Very Berry 85 g, una fusión perfecta entre lo crujiente y lo suave. Cada pieza combina un centro gomoso cubierto de diminutos caramelos Nerds con sabores de frutas del bosque, creando una experiencia divertida, colorida y deliciosa.
+
+Características principales
+Sabor: Mezcla frutal de berries (fresa, mora, frambuesa y arándano).
+
+Textura: Centro gomoso masticable con exterior crujiente.
+
+Presentación: Bolsa de 85 g, práctica para disfrutar o compartir.
+
+Marca: Nerds.
+
+Tipo de producto: Golosina de caramelo y gomita recubierta.
+
+Beneficios y experiencia de consumo
+Cada bocado ofrece una sensación contrastante entre la suavidad del interior y el crujido de la cubierta, junto con una explosión de sabores frutales. Su mezcla de colores y texturas la convierte en una opción ideal para quienes buscan algo más que un dulce común.
+
+Recomendaciones de uso
+Consumir directamente del empaque.
+
+Ideal para compartir, decorar postres, llenar frascos de dulces o disfrutar durante viajes.
+
+Mantener en un lugar fresco y seco para conservar su frescura y crocancia.
+
+Conservación
+
+Evitar la exposición al sol o al calor para preservar la textura crujiente y el sabor intenso. Cerrar bien la bolsa después de abrir para mantener su calidad.",,macarenastore_79200060695,false,--,2125826038,U,0,1,22800.00,22800.00,2280.00,20520.00,42600.00,6240.00,6240.00,0.00,36360.00,Bogotá,--,--,900250638,--,--,--
+finished,2453986875,2026-04-30 17:47:17,Mariana Villamizar,mvillamizarvillegas@gmail.com,3152242421,52409857,Cra. 9a #92-40,macarenastore,1367030,JHON BRAYAN ANGEL COY,Ice Breakers Ice Cubes Peppermint 40 Unidades | Chicle Sin Azúcar Sabor Menta,"Disfruta Ice Breakers Ice Cubes Peppermint, chicles sin azúcar con sabor intenso y refrescante a menta, en presentación de 40 unidades, ideales para aliento fresco por más tiempo.",,macarenastore_03484308,false,--,2126160188,U,0,1,30000.00,30000.00,0.00,30000.00,72400.00,3960.00,3960.00,0.00,68440.00,Bogotá,--,--,900250638,--,--,--
+finished,2453986875,2026-04-30 17:47:17,Mariana Villamizar,mvillamizarvillegas@gmail.com,3152242421,52409857,Cra. 9a #92-40,macarenastore,1367030,JHON BRAYAN ANGEL COY,Chicle Trident Botella Sin Azúcar Menta 35 Und,Chicles Trident sin Azúcar sabor artificial a Menta en botella de 35 unidades.,7622201711726,macarenastore_7622201711726,false,--,2125494359,U,0,1,10800.00,10800.00,0.00,10800.00,72400.00,3960.00,3960.00,0.00,68440.00,Bogotá,--,--,900250638,--,--,--
+finished,2453986875,2026-04-30 17:47:17,Mariana Villamizar,mvillamizarvillegas@gmail.com,3152242421,52409857,Cra. 9a #92-40,macarenastore,1367030,JHON BRAYAN ANGEL COY,Sour Patch Kids 56g,Sour Patch Kids 56g,070462098501,macarenastore_070462098501,false,--,2124506335,U,0,1,11800.00,11800.00,0.00,11800.00,72400.00,3960.00,3960.00,0.00,68440.00,Bogotá,--,--,900250638,--,--,--
+finished,2453986875,2026-04-30 17:47:17,Mariana Villamizar,mvillamizarvillegas@gmail.com,3152242421,52409857,Cra. 9a #92-40,macarenastore,1367030,JHON BRAYAN ANGEL COY,Sour Patch Kids 99g,Sour Patch Kids 99g,070462098358,macarenastore_070462098358,false,--,2124622991,U,0,1,19800.00,19800.00,3960.00,15840.00,72400.00,3960.00,3960.00,0.00,68440.00,Bogotá,--,--,900250638,--,--,--
+finished,2453951744,2026-04-30 16:05:57,catalina alvarez,catalin.alvarez.t@gmail.com,3156561776,,Carrera 18 # 123 - 26,macarenastore,852475,JUAN DAVID RINCON MEJIA,Dulces Smarties X 25und,Dulces Smarties X 25und,011206005553,macarenastore_011206005553,false,--,2124753530,U,0,1,20000.00,20000.00,0.00,20000.00,40800.00,0.00,0.00,0.00,40800.00,Bogotá,--,--,900250638,--,--,--
+finished,2453951744,2026-04-30 16:05:57,catalina alvarez,catalin.alvarez.t@gmail.com,3156561776,,Carrera 18 # 123 - 26,macarenastore,852475,JUAN DAVID RINCON MEJIA,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,8410525243219,macarenastore_8410525243219,false,--,2124623287,U,0,1,20800.00,20800.00,0.00,20800.00,40800.00,0.00,0.00,0.00,40800.00,Bogotá,--,--,900250638,--,--,--
+finished,2453908636,2026-04-30 14:04:12,Wilson Diaz Pabon,dhwc7fnxq4@privaterelay.appleid.com,3183355489,,Cra23#118-31,macarenastore,1349764,MELISSA PEREZ PALOMINO,Sour Patch Kids 99g,Sour Patch Kids 99g,070462098358,macarenastore_070462098358,false,--,2124622991,U,0,2,19800.00,39600.00,7920.00,31680.00,39600.00,7920.00,7920.00,0.00,31680.00,Bogotá,--,--,900250638,--,--,--
+finished,2453879690,2026-04-30 12:58:00,María Fernanda  Parra,lolingmafe@gmail.com,3173711751,,Calle 128 B # 60 - 04,macarenastore,260623,JOHN JAIRO BUITRAGO VERA,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,2,30000.00,60000.00,3000.00,57000.00,75800.00,3000.00,3000.00,0.00,72800.00,Bogotá,--,--,900250638,--,--,--
+finished,2453879690,2026-04-30 12:58:00,María Fernanda  Parra,lolingmafe@gmail.com,3173711751,,Calle 128 B # 60 - 04,macarenastore,260623,JOHN JAIRO BUITRAGO VERA,Peelerz Uva 65 G | Gomitas Masticables Pelables Sabor Uva,"Disfruta las gomitas Peelerz sabor uva de 65 g: masticables, pelables y deliciosas, ideales para compartir o disfrutar en cualquier momento.",6936756287195,macarenastore_6936756287195,false,--,2126118022,U,0,1,15800.00,15800.00,0.00,15800.00,75800.00,3000.00,3000.00,0.00,72800.00,Bogotá,--,--,900250638,--,--,--
+finished,2453814278,2026-04-30 10:10:26,Laura Sofía  Melo Hernández ,laurasofiamelohernandez36@gmail.com,3106912040,,calle 82 número 102-79,macarenastore,234187,FREDDY ELIECER GUTIERREZ CHACON,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,Goma Cable Rellepica Pitufo Sandia X 60 Ud Fini,8410525243219,macarenastore_8410525243219,false,--,2124623287,U,0,1,20800.00,20800.00,0.00,20800.00,20800.00,0.00,0.00,0.00,20800.00,Bogotá,--,--,900250638,--,--,--
+finished,2453803080,2026-04-30 09:12:37,Manuela none,manuelaocho@hotmail.com,3176720172,1000151136," Calle 126 # 11-82 ",macarenastore,1078280,Joander Jesus Ramirez Garcia,Ramen Buldak Carbonara Samyang Vaso 105 G,El Ramen Buldak Carbonara Samyang en vaso 105 g ofrece una combinación perfecta de picante intenso con una textura cremosa tipo carbonara. Su presentación práctica lo hace ideal para preparar rápida y fácilmente en cualquier lugar.,8801073211506,macarenastore_8801073211506,false,--,2126365708,U,0,1,30000.00,30000.00,1500.00,28500.00,30000.00,1500.00,1500.00,0.00,28500.00,Bogotá,--,--,900250638,--,--,--
+finished,2453600117,2026-04-29 14:42:46,Yamid melendez,yamidmelendez@gmail.com,3214921712,,Av calle 127 71-20 ,macarenastore,757276,JONAS JOSUE VELASQUEZ GUILLEN,"Ice Breakers Sours Watermelon, Green Apple & Tangerine 42 G | Caramelos Ácidos Sin Azúcar","Disfruta Ice Breakers Sours, caramelos sin azúcar con sabor ácido intenso a sandía, manzana verde y mandarina, en presentación de 42 g, ideales para refrescar tu aliento con un toque frutal y divertido.",,macarenastore_03409802,false,--,2126160445,U,0,1,20000.00,20000.00,0.00,20000.00,20000.00,0.00,0.00,0.00,20000.00,Bogotá,--,--,900250638,--,--,--

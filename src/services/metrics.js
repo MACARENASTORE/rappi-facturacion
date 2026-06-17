@@ -45,7 +45,7 @@ function contains(value, query) {
 
 function orderMatchesFilters(order, filters) {
   if (filters.status && order.status !== filters.status) return false;
-  if (filters.customer && !contains(order.customer, filters.customer)) return false;
+  if (filters.customer && !contains(`${order.customer} ${order.customerDocument}`, filters.customer)) return false;
 
   if (filters.product) {
     const hasProduct = order.items.some(item => contains(item.name, filters.product));
@@ -56,7 +56,9 @@ function orderMatchesFilters(order, filters) {
     const haystack = [
       order.id,
       order.customer,
+      order.customerDocument,
       order.status,
+      ...order.items.map(item => item.reference),
       ...order.items.map(item => item.name)
     ].join(' ');
 
@@ -143,6 +145,7 @@ function normalizeOrder(order) {
     ...order,
     id: String(order.id || ''),
     customer: order.customer || 'Cliente sin nombre',
+    customerDocument: String(order.customerDocument || ''),
     status: order.status || 'sin estado',
     date: parseDate(order.date),
     sales,
@@ -269,6 +272,7 @@ function calculateDashboardMetrics(orders, options = {}) {
     ordenes: filtered.map(order => ({
       id: order.id,
       customer: order.customer,
+      customerDocument: order.customerDocument,
       status: order.status,
       date: order.dateLabel || order.date.toISOString(),
       sales: order.sales,
@@ -282,6 +286,7 @@ function calculateDashboardMetrics(orders, options = {}) {
     ultimasOrdenes: filtered.slice(0, 10).map(order => ({
       id: order.id,
       customer: order.customer,
+      customerDocument: order.customerDocument,
       status: order.status,
       date: order.dateLabel || order.date.toISOString(),
       sales: order.sales,

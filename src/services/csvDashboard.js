@@ -46,6 +46,7 @@ function normalizeRappiRows(rows) {
         id: orderId,
         source: 'csv',
         customer: value(row, ['Usuario']) || 'Cliente sin nombre',
+        customerDocument: value(row, ['Documento']) || '',
         status,
         date: createdAt,
         dateLabel: createdAtRaw,

@@ -22,6 +22,17 @@ function invoiceClient(invoice) {
   return 'Cliente sin nombre';
 }
 
+function invoiceClientDocument(invoice) {
+  return String(
+    invoice.client?.identification ||
+    invoice.client?.identificationObject?.number ||
+    invoice.client?.identificationNumber ||
+    invoice.client?.document ||
+    invoice.identification ||
+    ''
+  );
+}
+
 function itemQuantity(item) {
   return Number(item.quantity || item.qty || 0) || 0;
 }
@@ -63,6 +74,7 @@ function normalizeAlegraInvoices(invoices, itemsCatalog = []) {
       id: String(invoice.number || invoice.id || invoice.uuid || ''),
       source: 'alegra',
       customer: invoiceClient(invoice),
+      customerDocument: invoiceClientDocument(invoice),
       status: invoice.status || invoice.invoiceStatus || 'sin estado',
       date: new Date(dateRaw),
       dateLabel: dateRaw,
@@ -78,7 +90,10 @@ function normalizeAlegraInvoices(invoices, itemsCatalog = []) {
 async function metricsFromAlegra(options = {}) {
   const [invoiceResult, itemResult] = await Promise.all([
     getInvoices(options),
-    getItems({ limit: Number(options.itemLimit) || 100 })
+    getItems({
+      limit: Number(options.itemLimit) || 30,
+      maxPages: Number(options.maxPages) || 3
+    })
   ]);
 
   const orders = normalizeAlegraInvoices(invoiceResult.data, itemResult.data);

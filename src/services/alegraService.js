@@ -33,10 +33,32 @@ function ensureCredentials() {
   }
 }
 
-async function getInvoices({ from, to, limit = 100 } = {}) {
+async function fetchPaged(endpoint, params, maxPages = 3) {
+  const limit = Math.min(Number(params.limit) || 30, 30);
+  const all = [];
+
+  for (let page = 0; page < maxPages; page += 1) {
+    const response = await alegra.get(endpoint, {
+      params: {
+        ...params,
+        limit,
+        start: page * limit
+      }
+    });
+
+    const data = Array.isArray(response.data) ? response.data : [];
+    all.push(...data);
+
+    if (data.length < limit) break;
+  }
+
+  return all;
+}
+
+async function getInvoices({ from, to, limit = 30, maxPages = 3 } = {}) {
   ensureCredentials();
 
-  const params = { limit };
+  const params = { limit: Math.min(Number(limit) || 30, 30) };
   if (from) params.dateStart = from;
   if (to) params.dateEnd = to;
 
@@ -44,23 +66,21 @@ async function getInvoices({ from, to, limit = 100 } = {}) {
   const cached = getCached(key);
   if (cached) return { data: cached, cache: true };
 
-  const response = await alegra.get('/invoices', { params });
-  const data = Array.isArray(response.data) ? response.data : [];
+  const data = await fetchPaged('/invoices', params, maxPages);
   setCached(key, data);
 
   return { data, cache: false };
 }
 
-async function getItems({ limit = 100 } = {}) {
+async function getItems({ limit = 30, maxPages = 3 } = {}) {
   ensureCredentials();
 
-  const params = { limit };
+  const params = { limit: Math.min(Number(limit) || 30, 30) };
   const key = cacheKey('items', params);
   const cached = getCached(key);
   if (cached) return { data: cached, cache: true };
 
-  const response = await alegra.get('/items', { params });
-  const data = Array.isArray(response.data) ? response.data : [];
+  const data = await fetchPaged('/items', params, maxPages);
   setCached(key, data);
 
   return { data, cache: false };
